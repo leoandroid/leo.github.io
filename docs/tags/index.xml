@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Leo Blogs</title>
+    <link>http://localhost:65297/tags/</link>
+    <description>Recent Posts in Tags on Leo Blogs</description>
+    <generator>Hugo 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jul 2025 04:12:42 +0800</lastBuildDate>
+    <atom:link href="http://localhost:65297/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RxJava</title>
+      <link>http://localhost:65297/tags/rxjava/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/rxjava/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>文档</title>
+      <link>http://localhost:65297/tags/%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/%E6%96%87%E6%A1%A3/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Android</title>
+      <link>http://localhost:65297/tags/android/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/android/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>AOSP</title>
+      <link>http://localhost:65297/tags/aosp/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/aosp/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>废弃</title>
+      <link>http://localhost:65297/tags/%E5%BA%9F%E5%BC%83/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/%E5%BA%9F%E5%BC%83/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Chrome</title>
+      <link>http://localhost:65297/tags/chrome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/chrome/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Extensions</title>
+      <link>http://localhost:65297/tags/extensions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/extensions/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:65297/tags/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/git/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Jkeyll</title>
+      <link>http://localhost:65297/tags/jkeyll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/jkeyll/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Mac</title>
+      <link>http://localhost:65297/tags/mac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/mac/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>http://localhost:65297/tags/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:65297/tags/markdown/</guid>
+      <description></description>
+      
+    </item>
+  </channel>
+</rss>

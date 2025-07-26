@@ -1,7 +1,7 @@
 title = 'Leo Blogs'
 languageCode = 'en-us'
 theme = "github-style"
-baseURL = "https://leoandroid/leo.github.io/"
+baseURL = "https://leo.github.io/"
 publishDir = "public"
 relativeURLs = true  # 解决子路径资源加载问题
 canonifyURLs = true  # 转换相对路径为绝对路径

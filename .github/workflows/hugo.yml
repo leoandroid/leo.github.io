@@ -1,35 +1,42 @@
-name: deploy
+name: Deploy Jekyll
 
 on:
   push:
-  workflow_dispatch:
-  schedule:
-    # Runs everyday at 8:00 AM
-    - cron: "0 0 * * *"
+    branches: [main]
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          submodules: true
-          fetch-depth: 0
+          submodules: github-style  # 如果使用主题子模块
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          hugo-version: "latest"
+          ruby-version: '3.1'  # 匹配你的Gemfile
 
-      - name: Build Web
-        run: hugo
+      - name: Verify directory structure
+        run: |
+          echo "当前目录内容:"
+          ls -la
+          echo "docs目录是否存在:"
+          ls -ld docs || echo "No docs directory"  # 调试输出
 
-      - name: Deploy Web
+      - name: Build site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./   # 根据实际结构调整 👈 关键参数
+          destination: ./_site
+          verbose: true  # 启用详细日志
+
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          EXTERNAL_REPOSITORY: leoandroid/leo.github.io
-          PUBLISH_BRANCH: master
-          PUBLISH_DIR: ./.site
-          commit_message: ${{ github.event.head_commit.message }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./_site

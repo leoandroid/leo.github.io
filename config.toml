@@ -2,6 +2,6 @@ title = 'Leo Blogs'
 languageCode = 'en-us'
 theme = "github-style"
 baseURL = "https://leo.github.io/"
-publishDir = "./site"
+publishDir = "./.site"
 relativeURLs = true  # 解决子路径资源加载问题
 canonifyURLs = true  # 转换相对路径为绝对路径

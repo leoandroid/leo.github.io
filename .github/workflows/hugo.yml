@@ -35,13 +35,6 @@ jobs:
         run: |
           # 强制清理并构建
           hugo --minify --cleanDestinationDir
-          
-          # 关键步骤：创建 .nojekyll 文件
-          touch public/.nojekyll
-          
-          # 验证文件存在
-          echo "验证 .nojekyll 文件:"
-          ls -la public/.nojekyll
 
       - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3

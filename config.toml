@@ -1,5 +1,5 @@
 title = 'Leo Blogs'
 languageCode = 'en-us'
-theme = "github-style-new"
+theme = "hugo-brewm"
 baseURL = "https://leo.github.io/"
 publishDir = "public"

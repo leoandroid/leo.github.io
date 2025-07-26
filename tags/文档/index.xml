@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文档 on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/%E6%96%87%E6%A1%A3/</link><description>Recent content in 文档 on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/leoandroid/leo.github.io/tags/%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>RxJava 文档翻译</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid><description>&lt;h2 id="release-version">Release Version&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Respository&lt;/th>
+ &lt;th style="text-align: center">Release Version&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxjava/3.1.6">RxJva Maven 3.1.6&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxJava/tags">3.1.6&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxandroid/3.0.2">RxAndroid Maven 3.0.2&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxAndroid/releases">3.0.2&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxkotlin/3.0.1">RxKotlin Maven 3.0.1&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxKotlin/releases">3.0.1&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="binaries">Binaries&lt;/h2>
+&lt;p>Binaries and dependency information for Maven, Ivy, Gradle and others can be found at &lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxjava/3.1.6">ReactX Maven&lt;/a>.&lt;/p>
+&lt;p>Example for Gradle:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxjava:3.1.6&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxandroid:3.0.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxkotlin:3.0.1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="the-operators-of-reactivex">The Operators of ReactiveX&lt;/h2>
+&lt;h3 id="create-observables">Create Observables&lt;/h3>
+&lt;h4 id="create---create-an-observable-from-scratch-by-calling-observer-methods-programmatically">Create - &lt;a href="https://reactivex.io/documentation/operators/create.html">create an Observable from scratch by calling observer methods programmatically&lt;/a>&lt;/h4>
+&lt;blockquote>
+&lt;p>You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.&lt;!-- raw HTML omitted -->
+A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.&lt;/p></description></item><item><title>Markdown 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid><description>&lt;h2 id="总览">总览&lt;/h2>
+&lt;p>几乎所有 &lt;a href="https://www.markdown.xyz/cheat-sheet/">Markdown&lt;/a> 应用程序都支持 John Gruber 原始设计文档中列出的 Markdown 基本语法。但是，Markdown 处理程序之间存在着细微的变化和差异，我们都会尽可能标记出来。&lt;/p>
+&lt;h2 id="标题headings">标题（Headings）&lt;/h2>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> # Heading&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ ...and after a heading.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ Without blank lines, this might not look right.&amp;lt;br&amp;gt;
+ # Heading&amp;lt;br&amp;gt;
+ Don't do this!
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> I think I'll use it to format all of my documents from now on.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;&amp;amp;lt;p&amp;amp;gt;I really like using Markdown.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ &amp;amp;lt;p&amp;amp;gt;I think I'll use it to format all of my documents from now on.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;p&amp;gt;I really like using Markdown.&amp;lt;/p&amp;gt;
+
+ &amp;lt;p&amp;gt;I think I'll use it to format all of my documents from now on.&amp;lt;/p&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> Keep lines left-aligned like this.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ &amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;This can result in unexpected
+ formatting problems.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ &amp;amp;nbsp;&amp;amp;nbsp;Don't add tabs or spaces in front of paragraphs.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> And this is the second line.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;p&amp;gt;This is the first line.&amp;lt;br&amp;gt; 
+ And this is the second line.&amp;lt;/p&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> First line with the HTML tag after.&amp;amp;lt;br&amp;amp;gt;&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ First line with a backslash after.\&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ First line with nothing after.&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> &amp;amp;gt; This is a blockquote&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ ...and after a blockquote.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ Without blank lines, this might not look right.&amp;lt;br&amp;gt;
+ &amp;amp;gt; This is a blockquote&amp;lt;br&amp;gt;
+ Don't do this!
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>I need to add another paragraph below the second list item.
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>And here&amp;rsquo;s the third list item.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;I need to add another paragraph below the second list item.&amp;lt;/p&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;amp;gt; A blockquote would look great below the second list item.
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>And here&amp;rsquo;s the third list item.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;blockquote&amp;gt;
+ &amp;lt;p&amp;gt;A blockquote would look great below the second list item.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> &amp;amp;lt;html&amp;amp;gt;
+ &amp;amp;lt;head&amp;amp;gt;
+ &amp;amp;lt;title&amp;amp;gt;Test&amp;amp;lt;/title&amp;amp;gt;
+ &amp;amp;lt;/head&amp;amp;gt;
+&lt;/code>&lt;/pre>
+&lt;ol start="3">
+&lt;li>Update the title to match the name of your website.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ol>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;div class=&amp;quot;language-text highlighter-rouge&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;highlight&amp;quot;&amp;gt;&amp;lt;pre class=&amp;quot;highlight&amp;quot;&amp;gt;&amp;lt;code&amp;gt; &amp;amp;lt;html&amp;amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;Test&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted --> &lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>TeXt 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</guid><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg" alt="TeXt Theme">&lt;/p>
+&lt;p>&lt;a href="https://kitian616.github.io/jekyll-TeXt-theme/docs/zh/layouts">TeXt&lt;/a> is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.&lt;/p>
+&lt;h2 id="skins">Skins&lt;/h2>
+&lt;p>TeXt has 6 built-in skins, you can also set up your own skin.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>default&lt;/code>&lt;/th>
+ &lt;th>&lt;code>dark&lt;/code>&lt;/th>
+ &lt;th>&lt;code>forest&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg" alt="Default">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg" alt="Dark">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg" alt="Forest">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>ocean&lt;/code>&lt;/th>
+ &lt;th>&lt;code>chocolate&lt;/code>&lt;/th>
+ &lt;th>&lt;code>orange&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg" alt="Ocean">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg" alt="Chocolate">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg" alt="Orange">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="highlight-theme">Highlight Theme&lt;/h3>
+&lt;p>TeXt use &lt;a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow&lt;/a> as the highlight theme.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>tomorrow&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-eighties&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-blue&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-bright&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png" alt="Tomorrow">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png" alt="Tomorrow Night">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png" alt="Tomorrow Night Eighties">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png" alt="Tomorrow Night Blue">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png" alt="Tomorrow Night Bright">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item></channel></rss>

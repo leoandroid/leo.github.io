@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RxJava on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/rxjava/</link><description>Recent content in RxJava on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/leoandroid/leo.github.io/tags/rxjava/index.xml" rel="self" type="application/rss+xml"/><item><title>RxJava 文档翻译</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid><description>&lt;h2 id="release-version">Release Version&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Respository&lt;/th>
+ &lt;th style="text-align: center">Release Version&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxjava/3.1.6">RxJva Maven 3.1.6&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxJava/tags">3.1.6&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxandroid/3.0.2">RxAndroid Maven 3.0.2&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxAndroid/releases">3.0.2&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxkotlin/3.0.1">RxKotlin Maven 3.0.1&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxKotlin/releases">3.0.1&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="binaries">Binaries&lt;/h2>
+&lt;p>Binaries and dependency information for Maven, Ivy, Gradle and others can be found at &lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxjava/3.1.6">ReactX Maven&lt;/a>.&lt;/p>
+&lt;p>Example for Gradle:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxjava:3.1.6&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxandroid:3.0.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxkotlin:3.0.1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="the-operators-of-reactivex">The Operators of ReactiveX&lt;/h2>
+&lt;h3 id="create-observables">Create Observables&lt;/h3>
+&lt;h4 id="create---create-an-observable-from-scratch-by-calling-observer-methods-programmatically">Create - &lt;a href="https://reactivex.io/documentation/operators/create.html">create an Observable from scratch by calling observer methods programmatically&lt;/a>&lt;/h4>
+&lt;blockquote>
+&lt;p>You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.&lt;!-- raw HTML omitted -->
+A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.&lt;/p></description></item></channel></rss>

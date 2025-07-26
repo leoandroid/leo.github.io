@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jkeyll on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/jkeyll/</link><description>Recent content in Jkeyll on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://github.com/leoandroid/leo.github.io/tags/jkeyll/index.xml" rel="self" type="application/rss+xml"/><item><title>TeXt 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</guid><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg" alt="TeXt Theme">&lt;/p>
+&lt;p>&lt;a href="https://kitian616.github.io/jekyll-TeXt-theme/docs/zh/layouts">TeXt&lt;/a> is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.&lt;/p>
+&lt;h2 id="skins">Skins&lt;/h2>
+&lt;p>TeXt has 6 built-in skins, you can also set up your own skin.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>default&lt;/code>&lt;/th>
+ &lt;th>&lt;code>dark&lt;/code>&lt;/th>
+ &lt;th>&lt;code>forest&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg" alt="Default">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg" alt="Dark">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg" alt="Forest">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>ocean&lt;/code>&lt;/th>
+ &lt;th>&lt;code>chocolate&lt;/code>&lt;/th>
+ &lt;th>&lt;code>orange&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg" alt="Ocean">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg" alt="Chocolate">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg" alt="Orange">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="highlight-theme">Highlight Theme&lt;/h3>
+&lt;p>TeXt use &lt;a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow&lt;/a> as the highlight theme.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>tomorrow&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-eighties&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-blue&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-bright&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png" alt="Tomorrow">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png" alt="Tomorrow Night">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png" alt="Tomorrow Night Eighties">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png" alt="Tomorrow Night Blue">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png" alt="Tomorrow Night Bright">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item></channel></rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>废弃 on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/%E5%BA%9F%E5%BC%83/</link><description>Recent content in 废弃 on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/leoandroid/leo.github.io/tags/%E5%BA%9F%E5%BC%83/index.xml" rel="self" type="application/rss+xml"/><item><title>上传 Android Library 到 Maven Center</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</link><pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</guid><description>&lt;p>&lt;code>过时废弃，声明如下&lt;/code>{:.error}&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="文档">文档&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://docs.gradle.org/current/userguide/signing_plugin.html">Gradle signing plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gnupg.org/download/index.html">GnuPG downloads&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://keys.openpgp.org/">Open pgp&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>我们上传本地 Library 到 Maven Central, 需要一下几项工作：&lt;/p>
+&lt;ol>
+&lt;li>创建 &lt;a href="https://issues.sonatype.org/secure/Dashboard.jspa">Sonatype&lt;/a> 账号，创建Issue&lt;/li>
+&lt;li>签名 &lt;a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP">OpenPGP&lt;/a>&lt;/li>
+&lt;li>Library build.gradle 配置&lt;/li>
+&lt;li>上传 Library 到 &lt;a href="https://issues.sonatype.org/secure/Dashboard.jspa">Sonatype&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="sonatype-配置">Sonatype 配置&lt;/h3>
+&lt;h4 id="创建-sonatype-账号">创建 &lt;a href="https://issues.sonatype.org">Sonatype&lt;/a> 账号&lt;/h4>
+&lt;p>打开 &lt;a href="https://issues.sonatype.org/secure/Signup!default.jspa">https://issues.sonatype.org/secure/Signup!default.jspa&lt;/a> 创建账号
+&lt;img src="assets/images/sonatype-start.png" alt="sonatype-start">&lt;/p>
+&lt;h4 id="创建-issue">创建 Issue&lt;/h4>
+&lt;p>点击 &lt;strong>Create&lt;/strong>按钮创建 Issue. 如果你用Github 创建Issue 这几个选项需要按如下规则填写：&lt;/p>
+&lt;ul>
+&lt;li>**Group Id:**io.github.username&lt;/li>
+&lt;li>&lt;strong>Project URL:&lt;/strong>&lt;a href="https://github.com/fengshenyanyi/Logcat">https://github.com/username/&lt;/a>project&lt;/li>
+&lt;li>&lt;strong>SCM url:&lt;/strong>&lt;a href="https://github.com/fengshenyanyi/Logcat.git">https://github.com/username/project.git&lt;/a>
+&lt;img src="assets/images/sonatype-create.png" alt="sonatype-create">&lt;/li>
+&lt;/ul>
+&lt;p>否则他会提示你创建错误，让你进行修改&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>[Permalink](https://issues.sonatype.org/browse/OSSRH-86976?focusedCommentId=1224850&amp;amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1224850)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[Bot Central-OSSRH](https://issues.sonatype.org/secure/ViewProfile.jspa?name=central-ossrh) added a comment - 2 days ago
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>To register this Group Id you must prove ownership of the domain leo.com. Please complete the following steps to continue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. **Add a DNS TXT record to your domain** with the text: OSSRH-86555. Please read [https://central.sonatype.org/faq/how-to-set-txt-record/](https://central.sonatype.org/faq/how-to-set-txt-record/)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. **Edit this ticket** and set Status to Open.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>More info: [https://central.sonatype.org/publish/](https://central.sonatype.org/publish/)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>If you do not own this domain, **you may also choose a different Group Id that reflects your project hosting. io.github.username would be valid based on your Project URL.**
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>To continue the registration process, please follow these steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Create a temporary, public repository called [https://github.com/username/OSSRH-86555](https://github.com/username/OSSRH-86555) to verify github account ownership.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. **Edit this ticket**, update the Group ID field with the new GroupId, and set Status to Open.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>More info: [https://central.sonatype.org/publish/requirements/coordinates/](https://central.sonatype.org/publish/requirements/coordinates/)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Issue &lt;strong>RESOLVED&lt;/strong>后，你就可以登录 &lt;a href="https://s01.oss.sonatype.org/#welcome">https://s01.oss.sonatype.org/#welcome&lt;/a> 准备上传Lirary了。&lt;/p></description></item></channel></rss>

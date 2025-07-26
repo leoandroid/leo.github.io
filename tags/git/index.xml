@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/git/</link><description>Recent content in Git on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://github.com/leoandroid/leo.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>git-chglog 自动生产 CHANGES</title><link>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</guid><description>&lt;h2 id="git-chglog-自动生成-changes-log">&lt;a href="https://github.com/git-chglog/git-chglog">git-chglog&lt;/a> 自动生成 changes log&lt;/h2>
+&lt;h3 id="mac-上安装使用">Mac 上安装使用&lt;/h3>
+&lt;p>&lt;a href="https://brew.sh/">Homebrew&lt;/a> (for macOS users)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew tap git-chglog/git-chglog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install git-chglog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用">使用&lt;/h3>
+&lt;p>执行命令后， 会自动生成模版和配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git-chglog --init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Help&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ git-chglog --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>USAGE:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git-chglog &lt;span style="color:#f92672">[&lt;/span>options&lt;span style="color:#f92672">]&lt;/span> &amp;lt;tag query&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> There are the following specification methods &lt;span style="color:#66d9ef">for&lt;/span> &amp;lt;tag query&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1. &amp;lt;old&amp;gt;..&amp;lt;new&amp;gt; - Commit contained in &amp;lt;old&amp;gt; tags from &amp;lt;new&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2. &amp;lt;name&amp;gt;.. - Commit from the &amp;lt;name&amp;gt; to the latest tag.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 3. ..&amp;lt;name&amp;gt; - Commit from the oldest tag to &amp;lt;name&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 4. &amp;lt;name&amp;gt; - Commit contained in &amp;lt;name&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OPTIONS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --init generate the git-chglog configuration file in interactive &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --path value Filter commits by path&lt;span style="color:#f92672">(&lt;/span>s&lt;span style="color:#f92672">)&lt;/span>. Can use multiple times.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --config value, -c value specifies a different configuration file to pick up &lt;span style="color:#f92672">(&lt;/span>default: &lt;span style="color:#e6db74">&amp;#34;.chglog/config.yml&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --template value, -t value specifies a template file to pick up. If not specified, use the one in config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --repository-url value specifies git repo URL. If not specified, use &lt;span style="color:#e6db74">&amp;#39;repository_url&amp;#39;&lt;/span> in config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --output value, -o value output path and filename &lt;span style="color:#66d9ef">for&lt;/span> the changelogs. If not specified, output to stdout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --next-tag value treat unreleased commits as specified tags &lt;span style="color:#f92672">(&lt;/span>EXPERIMENTAL&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --silent disable stdout output &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-color disable color output &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">[&lt;/span>$NO_COLOR&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-emoji disable emoji output &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">[&lt;/span>$NO_EMOJI&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-case disable &lt;span style="color:#66d9ef">case&lt;/span> sensitive filters &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --tag-filter-pattern value Regular expression of tag filter. Is specified, only matched tags will be picked
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --jira-url value Jira URL &lt;span style="color:#f92672">[&lt;/span>$JIRA_URL&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --jira-username value Jira username &lt;span style="color:#f92672">[&lt;/span>$JIRA_USERNAME&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --jira-token value Jira token &lt;span style="color:#f92672">[&lt;/span>$JIRA_TOKEN&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --sort value Specify how to sort tags; currently supports &lt;span style="color:#e6db74">&amp;#34;date&amp;#34;&lt;/span> or by &lt;span style="color:#e6db74">&amp;#34;semver&amp;#34;&lt;/span> &lt;span style="color:#f92672">(&lt;/span>default: date&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --help, -h show help &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version, -v print the version &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EXAMPLE:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> If &amp;lt;tag query&amp;gt; is not specified, it corresponds to all tags.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> This is the simplest example.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog 1.0.0..2.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to generate CHANGELOG including commit of 1.0.0 to 2.0.0.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog 1.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to generate CHANGELOG including commit of only 1.0.0.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog &lt;span style="color:#66d9ef">$(&lt;/span>git describe --tags &lt;span style="color:#66d9ef">$(&lt;/span>git rev-list --tags --max-count&lt;span style="color:#f92672">=&lt;/span>1&lt;span style="color:#66d9ef">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to generate CHANGELOG with the commit included in the latest tag.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --output CHANGELOG.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to output to CHANGELOG.md instead of standard output.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --config custom/dir/config.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command that uses a configuration file placed other than &lt;span style="color:#e6db74">&amp;#34;.chglog/config.yml&amp;#34;&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --path path/to/my/component --output CHANGELOG.component.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Filter commits by specific paths or files in git and output to a component specific changelog.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

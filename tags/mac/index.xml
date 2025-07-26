@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/mac/</link><description>Recent content in Mac on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://github.com/leoandroid/leo.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac 常用的命令</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</guid><description>&lt;h2 id="1-mac系统设置任何来源安装第三方软件">1. Mac系统设置任何来源安装第三方软件&lt;/h2>
+&lt;pre>&lt;code>```shell
+sudo spctl --master-disable
+```
+&lt;/code>&lt;/pre>
+&lt;h2 id="2-查询-ip">2. 查询 IP&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># wifi ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig getifaddr en0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ethernet ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig getifaddr en1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 应用</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</guid><description>&lt;h2 id="toolbar-小应用">Toolbar 小应用&lt;/h2>
+&lt;h3 id="1--itraffic-流量监测工具">1. &lt;a href="https://github.com/foamzou/ITraffic-monitor-for-mac">Itraffic&lt;/a> 流量监测工具&lt;/h3>
+&lt;blockquote>
+&lt;p>Monitor for displaying process traffic on Mac Status bar
+The macOS version should &amp;gt;= 10.15, since the project use swiftUI&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="assets/images/20240503/itraffic.png" alt="Itraffic">&lt;/p>
+&lt;h3 id="2-keyclucase-相当好用的快捷键提示工具">2. &lt;a href="https://github.com/Anze/KeyCluCask">KeyCluCase&lt;/a> 相当好用的快捷键提示工具&lt;/h3>
+&lt;blockquote>
+&lt;p>Simple and handy overview of applications shortcuts. Easy to use: just press ⌘ twice and hold to see the list.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="assets/images/20240503/keyclucase.png" alt="keyclucase">&lt;/p>
+&lt;h3 id="3-hidden-帮助隐藏-mac-tool-bar-上的图标">3. &lt;a href="https://github.com/dwarvesf/hidden">Hidden&lt;/a> 帮助隐藏 Mac Tool Bar 上的图标&lt;/h3>
+&lt;blockquote>
+&lt;p>Hidden Bar lets you hide menu bar items to give your Mac a cleaner look.&lt;/p></description></item><item><title>Mac 疑难杂症</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</guid><description>&lt;h2 id="1-ruby-安装使用过程中遇到的问题">1. Ruby 安装使用过程中遇到的问题:&lt;/h2>
+&lt;ol>
+&lt;li>Ruby/Gem 下载慢的问题:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 添加镜像源并移除默认源&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 列出已有源，应该只有镜像源一个&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gem sources -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用以下命令替换 bundler 默认源&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Mac 自带的 &lt;code>Ruby&lt;/code> 和通过 &lt;code>HomeBrew&lt;/code> 下载的&lt;code>Runby&lt;/code> 冲突问题。
+通过 &lt;code>HomeBrew&lt;/code> 下载完最新的 &lt;code>ruby&lt;/code> 后，在使用 &lt;code>which ruby&lt;/code> 或 &lt;code>where ruby&lt;/code> 或 &lt;code>ruby -v&lt;/code> 返回的都是Mac自带的 &lt;code>ruby&lt;/code> 而不是 &lt;code>HomeBrew&lt;/code> 下载的。在 &lt;code>~/.zshrc&lt;/code> 中添加下面的代码:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -d &lt;span style="color:#e6db74">&amp;#34;/opt/homebrew/opt/ruby/bin&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>/opt/homebrew/opt/ruby/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>gem environment gemdir&lt;span style="color:#e6db74">`&lt;/span>/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span> 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

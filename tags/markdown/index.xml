@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markdown on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/markdown/</link><description>Recent content in Markdown on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://github.com/leoandroid/leo.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid><description>&lt;h2 id="总览">总览&lt;/h2>
+&lt;p>几乎所有 &lt;a href="https://www.markdown.xyz/cheat-sheet/">Markdown&lt;/a> 应用程序都支持 John Gruber 原始设计文档中列出的 Markdown 基本语法。但是，Markdown 处理程序之间存在着细微的变化和差异，我们都会尽可能标记出来。&lt;/p>
+&lt;h2 id="标题headings">标题（Headings）&lt;/h2>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> # Heading&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ ...and after a heading.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ Without blank lines, this might not look right.&amp;lt;br&amp;gt;
+ # Heading&amp;lt;br&amp;gt;
+ Don't do this!
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> I think I'll use it to format all of my documents from now on.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;&amp;amp;lt;p&amp;amp;gt;I really like using Markdown.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ &amp;amp;lt;p&amp;amp;gt;I think I'll use it to format all of my documents from now on.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;p&amp;gt;I really like using Markdown.&amp;lt;/p&amp;gt;
+
+ &amp;lt;p&amp;gt;I think I'll use it to format all of my documents from now on.&amp;lt;/p&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> Keep lines left-aligned like this.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ &amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;This can result in unexpected
+ formatting problems.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ &amp;amp;nbsp;&amp;amp;nbsp;Don't add tabs or spaces in front of paragraphs.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> And this is the second line.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;p&amp;gt;This is the first line.&amp;lt;br&amp;gt; 
+ And this is the second line.&amp;lt;/p&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> First line with the HTML tag after.&amp;amp;lt;br&amp;amp;gt;&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ First line with a backslash after.\&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ First line with nothing after.&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> &amp;amp;gt; This is a blockquote&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ ...and after a blockquote.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ Without blank lines, this might not look right.&amp;lt;br&amp;gt;
+ &amp;amp;gt; This is a blockquote&amp;lt;br&amp;gt;
+ Don't do this!
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>I need to add another paragraph below the second list item.
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>And here&amp;rsquo;s the third list item.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;I need to add another paragraph below the second list item.&amp;lt;/p&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;amp;gt; A blockquote would look great below the second list item.
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>And here&amp;rsquo;s the third list item.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;blockquote&amp;gt;
+ &amp;lt;p&amp;gt;A blockquote would look great below the second list item.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> &amp;amp;lt;html&amp;amp;gt;
+ &amp;amp;lt;head&amp;amp;gt;
+ &amp;amp;lt;title&amp;amp;gt;Test&amp;amp;lt;/title&amp;amp;gt;
+ &amp;amp;lt;/head&amp;amp;gt;
+&lt;/code>&lt;/pre>
+&lt;ol start="3">
+&lt;li>Update the title to match the name of your website.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ol>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;div class=&amp;quot;language-text highlighter-rouge&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;highlight&amp;quot;&amp;gt;&amp;lt;pre class=&amp;quot;highlight&amp;quot;&amp;gt;&amp;lt;code&amp;gt; &amp;amp;lt;html&amp;amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;Test&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted --> &lt;!-- raw HTML omitted -->&lt;/p></description></item></channel></rss>

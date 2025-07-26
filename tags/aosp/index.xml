@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AOSP on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/tags/aosp/</link><description>Recent content in AOSP on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/leoandroid/leo.github.io/tags/aosp/index.xml" rel="self" type="application/rss+xml"/><item><title>MacOS-14.1 下载/编译/阅读 AOSP</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</link><pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>&lt;a href="https://source.android.google.cn/docs/setup/start/requirements?hl=zh-cn">警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。
+&lt;/a>&lt;/strong>
+&lt;strong>针对 &lt;code>Linux&lt;/code> 系统 Google 推出了 &lt;a href="https://developer.android.com/studio/platform?hl=zh-cn">平台版AndroidStudio&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>文档版本：1.0.1&lt;/p>
+&lt;p>设备信息:&lt;/p>
+&lt;ul>
+&lt;li>Mac OS: 14.1.2&lt;/li>
+&lt;li>Chip: M1&lt;/li>
+&lt;li>RAM: 16G&lt;/li>
+&lt;li>Core: 8&lt;/li>
+&lt;li>XCode: &lt;a href="https://download.developer.apple.com">13.2.1&lt;/a>&lt;/li>
+&lt;li>Android Version: android-12.0.0_r3&lt;/li>
+&lt;li>硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;h2 id="编译环境准备">编译环境准备&lt;/h2>
+&lt;h3 id="1-安装旧版-xcode">1. 安装旧版 XCode&lt;/h3>
+&lt;p>因&lt;code>AOSP&lt;/code>不再对 MAC 进行支持，所以我们使用最新版的&lt;code>XCode&lt;/code>会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以&lt;code>Go&lt;/code> 和 &lt;code>Rust&lt;/code>产生的问题最多。&lt;/p>
+&lt;p>我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用&lt;a href="https://download.developer.apple.com">XCode13.2.1&lt;/a>这样会帮助你避免很多不必要的麻烦。&lt;/p>
+&lt;h3 id="2-创建区分大小写的磁盘映像">2. 创建区分大小写的磁盘映像&lt;/h3>
+&lt;p>通过 shell 使用以下命令创建磁盘映像：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hdiutil create -type SPARSE -fs &lt;span style="color:#e6db74">&amp;#39;Case-sensitive Journaled HFS+&amp;#39;&lt;/span> -size 1024g ~/android.dmg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。&lt;/p>
+&lt;p>如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hdiutil resize -size &amp;lt;new-size-you-want&amp;gt;g ~/android.dmg.sparseimage
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 &lt;code>~/.bash_profile&lt;/code> 中添加辅助函数：&lt;/p></description></item></channel></rss>

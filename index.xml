@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/</link><description>Recent content on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/leoandroid/leo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>RxJava 文档翻译</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid><description>&lt;h2 id="release-version">Release Version&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Respository&lt;/th>
+ &lt;th style="text-align: center">Release Version&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxjava/3.1.6">RxJva Maven 3.1.6&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxJava/tags">3.1.6&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxandroid/3.0.2">RxAndroid Maven 3.0.2&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxAndroid/releases">3.0.2&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxkotlin/3.0.1">RxKotlin Maven 3.0.1&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/ReactiveX/RxKotlin/releases">3.0.1&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="binaries">Binaries&lt;/h2>
+&lt;p>Binaries and dependency information for Maven, Ivy, Gradle and others can be found at &lt;a href="https://central.sonatype.com/artifact/io.reactivex.rxjava3/rxjava/3.1.6">ReactX Maven&lt;/a>.&lt;/p>
+&lt;p>Example for Gradle:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxjava:3.1.6&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxandroid:3.0.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>implementation &lt;span style="color:#e6db74">&amp;#39;io.reactivex.rxjava3:rxkotlin:3.0.1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="the-operators-of-reactivex">The Operators of ReactiveX&lt;/h2>
+&lt;h3 id="create-observables">Create Observables&lt;/h3>
+&lt;h4 id="create---create-an-observable-from-scratch-by-calling-observer-methods-programmatically">Create - &lt;a href="https://reactivex.io/documentation/operators/create.html">create an Observable from scratch by calling observer methods programmatically&lt;/a>&lt;/h4>
+&lt;blockquote>
+&lt;p>You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.&lt;!-- raw HTML omitted -->
+A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.&lt;/p></description></item><item><title>MacOS-14.1 下载/编译/阅读 AOSP</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</link><pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>&lt;a href="https://source.android.google.cn/docs/setup/start/requirements?hl=zh-cn">警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。
+&lt;/a>&lt;/strong>
+&lt;strong>针对 &lt;code>Linux&lt;/code> 系统 Google 推出了 &lt;a href="https://developer.android.com/studio/platform?hl=zh-cn">平台版AndroidStudio&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>文档版本：1.0.1&lt;/p>
+&lt;p>设备信息:&lt;/p>
+&lt;ul>
+&lt;li>Mac OS: 14.1.2&lt;/li>
+&lt;li>Chip: M1&lt;/li>
+&lt;li>RAM: 16G&lt;/li>
+&lt;li>Core: 8&lt;/li>
+&lt;li>XCode: &lt;a href="https://download.developer.apple.com">13.2.1&lt;/a>&lt;/li>
+&lt;li>Android Version: android-12.0.0_r3&lt;/li>
+&lt;li>硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;h2 id="编译环境准备">编译环境准备&lt;/h2>
+&lt;h3 id="1-安装旧版-xcode">1. 安装旧版 XCode&lt;/h3>
+&lt;p>因&lt;code>AOSP&lt;/code>不再对 MAC 进行支持，所以我们使用最新版的&lt;code>XCode&lt;/code>会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以&lt;code>Go&lt;/code> 和 &lt;code>Rust&lt;/code>产生的问题最多。&lt;/p>
+&lt;p>我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用&lt;a href="https://download.developer.apple.com">XCode13.2.1&lt;/a>这样会帮助你避免很多不必要的麻烦。&lt;/p>
+&lt;h3 id="2-创建区分大小写的磁盘映像">2. 创建区分大小写的磁盘映像&lt;/h3>
+&lt;p>通过 shell 使用以下命令创建磁盘映像：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hdiutil create -type SPARSE -fs &lt;span style="color:#e6db74">&amp;#39;Case-sensitive Journaled HFS+&amp;#39;&lt;/span> -size 1024g ~/android.dmg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。&lt;/p>
+&lt;p>如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hdiutil resize -size &amp;lt;new-size-you-want&amp;gt;g ~/android.dmg.sparseimage
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 &lt;code>~/.bash_profile&lt;/code> 中添加辅助函数：&lt;/p></description></item><item><title>上传 Android Library 到 Maven Center</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</link><pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</guid><description>&lt;p>&lt;code>过时废弃，声明如下&lt;/code>{:.error}&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="文档">文档&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://docs.gradle.org/current/userguide/signing_plugin.html">Gradle signing plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gnupg.org/download/index.html">GnuPG downloads&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://keys.openpgp.org/">Open pgp&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>我们上传本地 Library 到 Maven Central, 需要一下几项工作：&lt;/p>
+&lt;ol>
+&lt;li>创建 &lt;a href="https://issues.sonatype.org/secure/Dashboard.jspa">Sonatype&lt;/a> 账号，创建Issue&lt;/li>
+&lt;li>签名 &lt;a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP">OpenPGP&lt;/a>&lt;/li>
+&lt;li>Library build.gradle 配置&lt;/li>
+&lt;li>上传 Library 到 &lt;a href="https://issues.sonatype.org/secure/Dashboard.jspa">Sonatype&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="sonatype-配置">Sonatype 配置&lt;/h3>
+&lt;h4 id="创建-sonatype-账号">创建 &lt;a href="https://issues.sonatype.org">Sonatype&lt;/a> 账号&lt;/h4>
+&lt;p>打开 &lt;a href="https://issues.sonatype.org/secure/Signup!default.jspa">https://issues.sonatype.org/secure/Signup!default.jspa&lt;/a> 创建账号
+&lt;img src="assets/images/sonatype-start.png" alt="sonatype-start">&lt;/p>
+&lt;h4 id="创建-issue">创建 Issue&lt;/h4>
+&lt;p>点击 &lt;strong>Create&lt;/strong>按钮创建 Issue. 如果你用Github 创建Issue 这几个选项需要按如下规则填写：&lt;/p>
+&lt;ul>
+&lt;li>**Group Id:**io.github.username&lt;/li>
+&lt;li>&lt;strong>Project URL:&lt;/strong>&lt;a href="https://github.com/fengshenyanyi/Logcat">https://github.com/username/&lt;/a>project&lt;/li>
+&lt;li>&lt;strong>SCM url:&lt;/strong>&lt;a href="https://github.com/fengshenyanyi/Logcat.git">https://github.com/username/project.git&lt;/a>
+&lt;img src="assets/images/sonatype-create.png" alt="sonatype-create">&lt;/li>
+&lt;/ul>
+&lt;p>否则他会提示你创建错误，让你进行修改&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>[Permalink](https://issues.sonatype.org/browse/OSSRH-86976?focusedCommentId=1224850&amp;amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1224850)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[Bot Central-OSSRH](https://issues.sonatype.org/secure/ViewProfile.jspa?name=central-ossrh) added a comment - 2 days ago
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>To register this Group Id you must prove ownership of the domain leo.com. Please complete the following steps to continue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. **Add a DNS TXT record to your domain** with the text: OSSRH-86555. Please read [https://central.sonatype.org/faq/how-to-set-txt-record/](https://central.sonatype.org/faq/how-to-set-txt-record/)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. **Edit this ticket** and set Status to Open.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>More info: [https://central.sonatype.org/publish/](https://central.sonatype.org/publish/)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>If you do not own this domain, **you may also choose a different Group Id that reflects your project hosting. io.github.username would be valid based on your Project URL.**
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>To continue the registration process, please follow these steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Create a temporary, public repository called [https://github.com/username/OSSRH-86555](https://github.com/username/OSSRH-86555) to verify github account ownership.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. **Edit this ticket**, update the Group ID field with the new GroupId, and set Status to Open.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>More info: [https://central.sonatype.org/publish/requirements/coordinates/](https://central.sonatype.org/publish/requirements/coordinates/)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Issue &lt;strong>RESOLVED&lt;/strong>后，你就可以登录 &lt;a href="https://s01.oss.sonatype.org/#welcome">https://s01.oss.sonatype.org/#welcome&lt;/a> 准备上传Lirary了。&lt;/p></description></item><item><title>Chrome浏览器插件</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</guid><description>&lt;h2 id="插件">插件&lt;/h2>
+&lt;h3 id="1-ontab-标签整理">1. &lt;a href="https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall">Ontab&lt;/a> 标签整理&lt;/h3>
+&lt;blockquote>
+&lt;p>Save up to 95% memory and reduce tab clutter
+Whenever you find yourself with too many tabs, click the OneTab icon to convert all of your tabs into a list. When you need to access the tabs again, you can either restore them individually or all at once.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="assets/images/20240503/onetab.png" alt="oneTab">&lt;/p>
+&lt;h3 id="2-itab-new-tab-新标签页">2. &lt;a href="https://chromewebstore.google.com/detail/itab-new-tab/mhloojimgilafopcmlcikiidgbbnelip">iTab New Tab&lt;/a> 新标签页&lt;/h3>
+&lt;blockquote>
+&lt;p>iTab新标签页,强大的浏览器新标签页,可以自定义自己网站捷径, 以及搜索引擎. 并且内置多个app等功能. 可以设置捷径图标样式,一个让你不受广告干扰的个性化卡片式起始页插件，创建和编辑属于您自己的浏览器标签页，精美日历、炫酷天气、每日头条、海量壁纸、常用网址随心订制&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="assets/images/20240503/itab.png" alt="iTab">&lt;/p>
+&lt;h3 id="3-darkreader-阅读模式">3. &lt;a href="https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh">DarkReader&lt;/a> 阅读模式&lt;/h3>
+&lt;blockquote>
+&lt;p>Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.&lt;/p></description></item><item><title>git-chglog 自动生产 CHANGES</title><link>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</guid><description>&lt;h2 id="git-chglog-自动生成-changes-log">&lt;a href="https://github.com/git-chglog/git-chglog">git-chglog&lt;/a> 自动生成 changes log&lt;/h2>
+&lt;h3 id="mac-上安装使用">Mac 上安装使用&lt;/h3>
+&lt;p>&lt;a href="https://brew.sh/">Homebrew&lt;/a> (for macOS users)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew tap git-chglog/git-chglog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install git-chglog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用">使用&lt;/h3>
+&lt;p>执行命令后， 会自动生成模版和配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git-chglog --init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Help&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ git-chglog --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>USAGE:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git-chglog &lt;span style="color:#f92672">[&lt;/span>options&lt;span style="color:#f92672">]&lt;/span> &amp;lt;tag query&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> There are the following specification methods &lt;span style="color:#66d9ef">for&lt;/span> &amp;lt;tag query&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1. &amp;lt;old&amp;gt;..&amp;lt;new&amp;gt; - Commit contained in &amp;lt;old&amp;gt; tags from &amp;lt;new&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 2. &amp;lt;name&amp;gt;.. - Commit from the &amp;lt;name&amp;gt; to the latest tag.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 3. ..&amp;lt;name&amp;gt; - Commit from the oldest tag to &amp;lt;name&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 4. &amp;lt;name&amp;gt; - Commit contained in &amp;lt;name&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OPTIONS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --init generate the git-chglog configuration file in interactive &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --path value Filter commits by path&lt;span style="color:#f92672">(&lt;/span>s&lt;span style="color:#f92672">)&lt;/span>. Can use multiple times.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --config value, -c value specifies a different configuration file to pick up &lt;span style="color:#f92672">(&lt;/span>default: &lt;span style="color:#e6db74">&amp;#34;.chglog/config.yml&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --template value, -t value specifies a template file to pick up. If not specified, use the one in config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --repository-url value specifies git repo URL. If not specified, use &lt;span style="color:#e6db74">&amp;#39;repository_url&amp;#39;&lt;/span> in config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --output value, -o value output path and filename &lt;span style="color:#66d9ef">for&lt;/span> the changelogs. If not specified, output to stdout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --next-tag value treat unreleased commits as specified tags &lt;span style="color:#f92672">(&lt;/span>EXPERIMENTAL&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --silent disable stdout output &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-color disable color output &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">[&lt;/span>$NO_COLOR&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-emoji disable emoji output &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">[&lt;/span>$NO_EMOJI&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-case disable &lt;span style="color:#66d9ef">case&lt;/span> sensitive filters &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --tag-filter-pattern value Regular expression of tag filter. Is specified, only matched tags will be picked
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --jira-url value Jira URL &lt;span style="color:#f92672">[&lt;/span>$JIRA_URL&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --jira-username value Jira username &lt;span style="color:#f92672">[&lt;/span>$JIRA_USERNAME&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --jira-token value Jira token &lt;span style="color:#f92672">[&lt;/span>$JIRA_TOKEN&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --sort value Specify how to sort tags; currently supports &lt;span style="color:#e6db74">&amp;#34;date&amp;#34;&lt;/span> or by &lt;span style="color:#e6db74">&amp;#34;semver&amp;#34;&lt;/span> &lt;span style="color:#f92672">(&lt;/span>default: date&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --help, -h show help &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version, -v print the version &lt;span style="color:#f92672">(&lt;/span>default: false&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EXAMPLE:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> If &amp;lt;tag query&amp;gt; is not specified, it corresponds to all tags.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> This is the simplest example.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog 1.0.0..2.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to generate CHANGELOG including commit of 1.0.0 to 2.0.0.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog 1.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to generate CHANGELOG including commit of only 1.0.0.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog &lt;span style="color:#66d9ef">$(&lt;/span>git describe --tags &lt;span style="color:#66d9ef">$(&lt;/span>git rev-list --tags --max-count&lt;span style="color:#f92672">=&lt;/span>1&lt;span style="color:#66d9ef">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to generate CHANGELOG with the commit included in the latest tag.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --output CHANGELOG.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command to output to CHANGELOG.md instead of standard output.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --config custom/dir/config.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The above is a command that uses a configuration file placed other than &lt;span style="color:#e6db74">&amp;#34;.chglog/config.yml&amp;#34;&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --path path/to/my/component --output CHANGELOG.component.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Filter commits by specific paths or files in git and output to a component specific changelog.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 常用的命令</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</guid><description>&lt;h2 id="1-mac系统设置任何来源安装第三方软件">1. Mac系统设置任何来源安装第三方软件&lt;/h2>
+&lt;pre>&lt;code>```shell
+sudo spctl --master-disable
+```
+&lt;/code>&lt;/pre>
+&lt;h2 id="2-查询-ip">2. 查询 IP&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># wifi ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig getifaddr en0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ethernet ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig getifaddr en1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 应用</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</guid><description>&lt;h2 id="toolbar-小应用">Toolbar 小应用&lt;/h2>
+&lt;h3 id="1--itraffic-流量监测工具">1. &lt;a href="https://github.com/foamzou/ITraffic-monitor-for-mac">Itraffic&lt;/a> 流量监测工具&lt;/h3>
+&lt;blockquote>
+&lt;p>Monitor for displaying process traffic on Mac Status bar
+The macOS version should &amp;gt;= 10.15, since the project use swiftUI&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="assets/images/20240503/itraffic.png" alt="Itraffic">&lt;/p>
+&lt;h3 id="2-keyclucase-相当好用的快捷键提示工具">2. &lt;a href="https://github.com/Anze/KeyCluCask">KeyCluCase&lt;/a> 相当好用的快捷键提示工具&lt;/h3>
+&lt;blockquote>
+&lt;p>Simple and handy overview of applications shortcuts. Easy to use: just press ⌘ twice and hold to see the list.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="assets/images/20240503/keyclucase.png" alt="keyclucase">&lt;/p>
+&lt;h3 id="3-hidden-帮助隐藏-mac-tool-bar-上的图标">3. &lt;a href="https://github.com/dwarvesf/hidden">Hidden&lt;/a> 帮助隐藏 Mac Tool Bar 上的图标&lt;/h3>
+&lt;blockquote>
+&lt;p>Hidden Bar lets you hide menu bar items to give your Mac a cleaner look.&lt;/p></description></item><item><title>Mac 疑难杂症</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</guid><description>&lt;h2 id="1-ruby-安装使用过程中遇到的问题">1. Ruby 安装使用过程中遇到的问题:&lt;/h2>
+&lt;ol>
+&lt;li>Ruby/Gem 下载慢的问题:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 添加镜像源并移除默认源&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 列出已有源，应该只有镜像源一个&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gem sources -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用以下命令替换 bundler 默认源&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Mac 自带的 &lt;code>Ruby&lt;/code> 和通过 &lt;code>HomeBrew&lt;/code> 下载的&lt;code>Runby&lt;/code> 冲突问题。
+通过 &lt;code>HomeBrew&lt;/code> 下载完最新的 &lt;code>ruby&lt;/code> 后，在使用 &lt;code>which ruby&lt;/code> 或 &lt;code>where ruby&lt;/code> 或 &lt;code>ruby -v&lt;/code> 返回的都是Mac自带的 &lt;code>ruby&lt;/code> 而不是 &lt;code>HomeBrew&lt;/code> 下载的。在 &lt;code>~/.zshrc&lt;/code> 中添加下面的代码:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -d &lt;span style="color:#e6db74">&amp;#34;/opt/homebrew/opt/ruby/bin&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>/opt/homebrew/opt/ruby/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>gem environment gemdir&lt;span style="color:#e6db74">`&lt;/span>/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span> 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Markdown 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid><description>&lt;h2 id="总览">总览&lt;/h2>
+&lt;p>几乎所有 &lt;a href="https://www.markdown.xyz/cheat-sheet/">Markdown&lt;/a> 应用程序都支持 John Gruber 原始设计文档中列出的 Markdown 基本语法。但是，Markdown 处理程序之间存在着细微的变化和差异，我们都会尽可能标记出来。&lt;/p>
+&lt;h2 id="标题headings">标题（Headings）&lt;/h2>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> # Heading&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ ...and after a heading.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ Without blank lines, this might not look right.&amp;lt;br&amp;gt;
+ # Heading&amp;lt;br&amp;gt;
+ Don't do this!
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> I think I'll use it to format all of my documents from now on.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;&amp;amp;lt;p&amp;amp;gt;I really like using Markdown.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ &amp;amp;lt;p&amp;amp;gt;I think I'll use it to format all of my documents from now on.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;p&amp;gt;I really like using Markdown.&amp;lt;/p&amp;gt;
+
+ &amp;lt;p&amp;gt;I think I'll use it to format all of my documents from now on.&amp;lt;/p&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> Keep lines left-aligned like this.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ &amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;This can result in unexpected
+ formatting problems.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ &amp;amp;nbsp;&amp;amp;nbsp;Don't add tabs or spaces in front of paragraphs.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> And this is the second line.&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;p&amp;gt;This is the first line.&amp;lt;br&amp;gt; 
+ And this is the second line.&amp;lt;/p&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> First line with the HTML tag after.&amp;amp;lt;br&amp;amp;gt;&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ First line with a backslash after.\&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ First line with nothing after.&amp;lt;br&amp;gt;
+ And the next line.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> &amp;amp;gt; This is a blockquote&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+
+ ...and after a blockquote.
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+ &amp;lt;td&amp;gt;
+ &amp;lt;code class=&amp;quot;highlighter-rouge&amp;quot;&amp;gt;
+ Without blank lines, this might not look right.&amp;lt;br&amp;gt;
+ &amp;amp;gt; This is a blockquote&amp;lt;br&amp;gt;
+ Don't do this!
+ &amp;lt;/code&amp;gt;
+ &amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>I need to add another paragraph below the second list item.
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>And here&amp;rsquo;s the third list item.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;I need to add another paragraph below the second list item.&amp;lt;/p&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;amp;gt; A blockquote would look great below the second list item.
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>And here&amp;rsquo;s the third list item.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;blockquote&amp;gt;
+ &amp;lt;p&amp;gt;A blockquote would look great below the second list item.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code> &amp;amp;lt;html&amp;amp;gt;
+ &amp;amp;lt;head&amp;amp;gt;
+ &amp;amp;lt;title&amp;amp;gt;Test&amp;amp;lt;/title&amp;amp;gt;
+ &amp;amp;lt;/head&amp;amp;gt;
+&lt;/code>&lt;/pre>
+&lt;ol start="3">
+&lt;li>Update the title to match the name of your website.
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
+&lt;/ol>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;pre>&lt;code>&amp;lt;div class=&amp;quot;language-text highlighter-rouge&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;highlight&amp;quot;&amp;gt;&amp;lt;pre class=&amp;quot;highlight&amp;quot;&amp;gt;&amp;lt;code&amp;gt; &amp;amp;lt;html&amp;amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;Test&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted --> &lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>TeXt 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</guid><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg" alt="TeXt Theme">&lt;/p>
+&lt;p>&lt;a href="https://kitian616.github.io/jekyll-TeXt-theme/docs/zh/layouts">TeXt&lt;/a> is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.&lt;/p>
+&lt;h2 id="skins">Skins&lt;/h2>
+&lt;p>TeXt has 6 built-in skins, you can also set up your own skin.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>default&lt;/code>&lt;/th>
+ &lt;th>&lt;code>dark&lt;/code>&lt;/th>
+ &lt;th>&lt;code>forest&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg" alt="Default">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg" alt="Dark">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg" alt="Forest">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>ocean&lt;/code>&lt;/th>
+ &lt;th>&lt;code>chocolate&lt;/code>&lt;/th>
+ &lt;th>&lt;code>orange&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg" alt="Ocean">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg" alt="Chocolate">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg" alt="Orange">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="highlight-theme">Highlight Theme&lt;/h3>
+&lt;p>TeXt use &lt;a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow&lt;/a> as the highlight theme.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;code>tomorrow&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-eighties&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-blue&lt;/code>&lt;/th>
+ &lt;th>&lt;code>tomorrow-night-bright&lt;/code>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png" alt="Tomorrow">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png" alt="Tomorrow Night">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png" alt="Tomorrow Night Eighties">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png" alt="Tomorrow Night Blue">&lt;/td>
+ &lt;td>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png" alt="Tomorrow Night Bright">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item></channel></rss>

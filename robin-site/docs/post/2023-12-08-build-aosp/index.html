@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/leoandroid/leo.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=50025&amp;path=leoandroid/leo.github.io/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:50025/leoandroid/leo.github.io/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/syntax.css' />
+    <title>MacOS-14.1 下载/编译/阅读 AOSP - Leo Blogs</title>
+    
+    <link rel="icon" type="image/x-icon" href='http://localhost:50025/leoandroid/leo.github.io/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="简介 警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。 针对 Linux 系统 Google 推出了 平台版AndroidStudio
+文档版本：1.0.1
+设备信息:
+Mac OS: 14.1.2 Chip: M1 RAM: 16G Core: 8 XCode: 13.2.1 Android Version: android-12.0.0_r3 硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。 编译环境准备 1. 安装旧版 XCode 因AOSP不再对 MAC 进行支持，所以我们使用最新版的XCode会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以Go 和 Rust产生的问题最多。
+我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用XCode13.2.1这样会帮助你避免很多不必要的麻烦。
+2. 创建区分大小写的磁盘映像 通过 shell 使用以下命令创建磁盘映像：
+hdiutil create -type SPARSE -fs &#39;Case-sensitive Journaled HFS&#43;&#39; -size 1024g ~/android.dmg 这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。
+如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：
+hdiutil resize -size &lt;new-size-you-want&gt;g ~/android.dmg.sparseimage 对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 ~/.bash_profile 中添加辅助函数：
+" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:50025/leoandroid/leo.github.io/post/2023-12-08-build-aosp/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="MacOS-14.1 下载/编译/阅读 AOSP - Leo Blogs" />
+<meta name="twitter:description"
+  content="简介 警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。 针对 Linux 系统 Google 推出了 平台版AndroidStudio
+文档版本：1.0.1
+设备信息:
+Mac OS: 14.1.2 Chip: M1 RAM: 16G Core: 8 XCode: 13.2.1 Android Version: android-12.0.0_r3 硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。 编译环境准备 1. 安装旧版 XCode 因AOSP不再对 MAC 进行支持，所以我们使用最新版的XCode会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以Go 和 Rust产生的问题最多。
+我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用XCode13.2.1这样会帮助你避免很多不必要的麻烦。
+2. 创建区分大小写的磁盘映像 通过 shell 使用以下命令创建磁盘映像：
+hdiutil create -type SPARSE -fs &#39;Case-sensitive Journaled HFS&#43;&#39; -size 1024g ~/android.dmg 这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。
+如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：
+hdiutil resize -size &lt;new-size-you-want&gt;g ~/android.dmg.sparseimage 对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 ~/.bash_profile 中添加辅助函数：
+" />
+<meta name="twitter:site" content="http://localhost:50025/leoandroid/leo.github.io/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:50025/leoandroid/leo.github.io/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="MacOS-14.1 下载/编译/阅读 AOSP - Leo Blogs">
+<meta property="og:description"
+  content="简介 警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。 针对 Linux 系统 Google 推出了 平台版AndroidStudio
+文档版本：1.0.1
+设备信息:
+Mac OS: 14.1.2 Chip: M1 RAM: 16G Core: 8 XCode: 13.2.1 Android Version: android-12.0.0_r3 硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。 编译环境准备 1. 安装旧版 XCode 因AOSP不再对 MAC 进行支持，所以我们使用最新版的XCode会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以Go 和 Rust产生的问题最多。
+我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用XCode13.2.1这样会帮助你避免很多不必要的麻烦。
+2. 创建区分大小写的磁盘映像 通过 shell 使用以下命令创建磁盘映像：
+hdiutil create -type SPARSE -fs &#39;Case-sensitive Journaled HFS&#43;&#39; -size 1024g ~/android.dmg 这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。
+如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：
+hdiutil resize -size &lt;new-size-you-want&gt;g ~/android.dmg.sparseimage 对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 ~/.bash_profile 中添加辅助函数：
+" />
+<meta property="og:url" content="http://localhost:50025/leoandroid/leo.github.io/post/2023-12-08-build-aosp/" />
+<meta property="og:site_name" content="MacOS-14.1 下载/编译/阅读 AOSP" />
+<meta property="og:image"
+  content="http://localhost:50025/leoandroid/leo.github.io/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2023-12-08 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:50025/leoandroid/leo.github.io/">
+        <img class="octicon" height="32" width="32" src="">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:50025/leoandroid/leo.github.io/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:50025/leoandroid/leo.github.io/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:50025/leoandroid/leo.github.io/">
+                  <img class=" avatar-user"
+                    src="http://localhost:50025/leoandroid/leo.github.io/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:50025/leoandroid/leo.github.io/"></a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:50025/leoandroid/leo.github.io/post/2023-12-08-build-aosp/">MacOS-14.1 下载/编译/阅读 AOSP</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Fri, 08 Dec 2023 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Fri, 08 Dec 2023 00:00:00 &#43;0000</relative-time>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      1245 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="../../tags/android">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Android
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="../../tags/aosp">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      AOSP
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h2 id="简介">简介</h2>
+<blockquote>
+<p><strong><a href="https://source.android.google.cn/docs/setup/start/requirements?hl=zh-cn">警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。
+</a></strong>
+<strong>针对 <code>Linux</code> 系统 Google 推出了 <a href="https://developer.android.com/studio/platform?hl=zh-cn">平台版AndroidStudio</a></strong></p>
+<p>文档版本：1.0.1</p>
+<p>设备信息:</p>
+<ul>
+<li>Mac OS: 14.1.2</li>
+<li>Chip: M1</li>
+<li>RAM: 16G</li>
+<li>Core: 8</li>
+<li>XCode: <a href="https://download.developer.apple.com">13.2.1</a></li>
+<li>Android Version: android-12.0.0_r3</li>
+<li>硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。</li>
+</ul></blockquote>
+<h2 id="编译环境准备">编译环境准备</h2>
+<h3 id="1-安装旧版-xcode">1. 安装旧版 XCode</h3>
+<p>因<code>AOSP</code>不再对 MAC 进行支持，所以我们使用最新版的<code>XCode</code>会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以<code>Go</code> 和 <code>Rust</code>产生的问题最多。</p>
+<p>我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用<a href="https://download.developer.apple.com">XCode13.2.1</a>这样会帮助你避免很多不必要的麻烦。</p>
+<h3 id="2-创建区分大小写的磁盘映像">2. 创建区分大小写的磁盘映像</h3>
+<p>通过 shell 使用以下命令创建磁盘映像：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdiutil create -type SPARSE -fs <span style="color:#e6db74">&#39;Case-sensitive Journaled HFS+&#39;</span> -size 1024g ~/android.dmg
+</span></span></code></pre></div><p>这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。</p>
+<p>如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdiutil resize -size &lt;new-size-you-want&gt;g ~/android.dmg.sparseimage
+</span></span></code></pre></div><p>对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 <code>~/.bash_profile</code> 中添加辅助函数：</p>
+<p>要在执行 mountAndroid 时装载磁盘映像，请运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> mountAndroid <span style="color:#f92672">{</span> hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>要在执行 umountAndroid 时卸载磁盘映像，请运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> umountAndroid<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> hdiutil detach /Volumes/android; <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="初始化下载编译-aosp将模块导入androidstudio">初始化/下载/编译 AOSP，将模块导入AndroidStudio</h2>
+<p><strong>请提前下载好 <code>diffutils</code>工具，避免编译到90%时报<code>VNDK</code>相关Error.</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install diffutils
+</span></span></code></pre></div><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/">清华AOSP镜像</a>文档建议了两种初始化方法，1. 下载初始化包 2. 直接 <code>repo init ...</code>。方法1的好处是能避免<code>repo init</code>失败的风险，但是我们现在要编译Android12，所以直接采取第二种方法通过<code>repo init</code>进行下载。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#1. repo 下载</span>
+</span></span><span style="display:flex;"><span>mkdir ~/bin
+</span></span><span style="display:flex;"><span>PATH<span style="color:#f92672">=</span>~/bin:$PATH
+</span></span><span style="display:flex;"><span>curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo
+</span></span><span style="display:flex;"><span>chmod +x repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2. 初始化 Android 12：</span>
+</span></span><span style="display:flex;"><span>repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-12.0.0_r3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#3. 同步源码树（以后只需执行这条命令来同步）：</span>
+</span></span><span style="display:flex;"><span>repo sync -c j64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#4. 初始化环境</span>
+</span></span><span style="display:flex;"><span>source build/envsetup.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#5. 避免 too many file open 的问题</span>
+</span></span><span style="display:flex;"><span>ulimit -S -n <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#6. lunch target</span>
+</span></span><span style="display:flex;"><span>lunch aosp_arm64-eng
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#7. 编译, make提供了-j的函数帮助我们加快编译速度。但是为了避免不必要的编译失败，我们</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   就不设置了，make会自己根据系统判断选择的。</span>
+</span></span><span style="display:flex;"><span>m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#8. 使用AIDEGen 导入模块到AndroidStudio</span>
+</span></span><span style="display:flex;"><span>aidegen framework -s -i s
+</span></span></code></pre></div><h2 id="遇见的编译错误">遇见的编译错误：</h2>
+<blockquote>
+<p>Error:
+<a href="https://stackoverflow.com/questions/74568500/failed-out-target-product-generic-arm64-obj-packaging-vndk-intermediates-check">VNDK library list has been changed. Changing the VNDK library list is not allowed in API locked </a></p>
+<p>Solution：
+<code>brew install diffutils</code></p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>  7% 7816/108971<span style="color:#f92672">]</span> build out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/check-list-timestamp
+</span></span><span style="display:flex;"><span>FAILED: out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/check-list-timestamp
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;(( diff --old-line-format=\&#34;Removed %L\&#34;    --new-line-format=\&#34;Added %L\&#34;      --unchanged-line-format=\&#34;\&#34;    build/make/target/product/gsi/29.txt out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/libs.txt     || ( echo -e \&#34; error: VNDK library list has been changed.\\n\&#34; \&#34;       Changing the VNDK library list is not allowed in API locked branches.\&#34;; exit 1 )) ) &amp;&amp; (mkdir -p out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/ ) &amp;&amp; (touch out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/check-list-timestamp )&#34;</span>
+</span></span><span style="display:flex;"><span>diff: unrecognized option <span style="color:#e6db74">`</span>--old-line-format<span style="color:#f92672">=</span>Removed %L<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span><span style="display:flex;"><span>usage: diff <span style="color:#f92672">[</span>-aBbdilpTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-c | -e | -f | -n | -q | -u<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span> file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdilpTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> -C number file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdiltw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> -D string file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdilpTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> -U number file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdilNPprsTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-c | -e | -f | -n | -q | -u<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-S name<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-X file<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-x pattern<span style="color:#f92672">]</span> dir1 dir2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbditwW<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--expand-tabs<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-all-blanks<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--ignore-blank-lines<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--minimal<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-file-name-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--suppress-common-lines<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--text<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--width<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            -y | --side-by-side file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>--help<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--version<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span> error: VNDK library list has been changed.
+</span></span><span style="display:flex;"><span>        Changing the VNDK library list is not allowed in API locked branches.
+</span></span><span style="display:flex;"><span>12:06:16 ninja failed with: exit status <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="总结">总结：</h2>
+<ol>
+<li>按照文档这个流程跑下来，基本可以保证编译成功，而且遇到的问题极少。</li>
+<li>因为Google不再对Mac进行支持了，所以还是尽快投入Ubuntu的怀抱吧。</li>
+</ol>
+<h2 id="参考文档">参考文档</h2>
+<blockquote>
+<ul>
+<li><a href="https://www.mobibrw.com/2023/37102">macOS Big Sur(11.7.5)编译Android 12.0源码过程总结</a></li>
+<li><a href="https://source.android.google.cn/docs/setup?hl=zh-cn">Google 搭建编译环境文档</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/">清华 Git repo 镜像</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/">清华 AOSP 镜像</a></li>
+<li><a href="https://android.googlesource.com/platform/tools/asuite/+/refs/heads/main/aidegen/README.md">AIDEGen README</a></li>
+<li><a href="https://juejin.cn/post/7166061140298956836">使用 AIDEGen 将 AOSP 项目导入 Android Studio</a></li>
+</ul></blockquote>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:50025/leoandroid/leo.github.io/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:50025/leoandroid/leo.github.io/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:50025/leoandroid/leo.github.io/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:50025/leoandroid/leo.github.io/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

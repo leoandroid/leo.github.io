@@ -23,7 +23,7 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git theme
 echo "theme = 'ananke'" >> config.toml
 
 # 3. 创建测试文章
-hugo new posts/first-post.md
+hugo new post/first-post.md
 
 # 4. 修改 config.toml 关键配置
 echo 'baseURL = "https://<你的用户名>.github.io/<仓库名>/"' >> config.toml

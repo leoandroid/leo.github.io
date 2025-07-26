@@ -1,6 +1,6 @@
 title = 'Leo Blogs'
 languageCode = 'en-us'
-theme = "github-style"
+theme = "themes/github-style"
 baseURL = "https://github.com/leoandroid/leo.github.io/"
 publishDir = "public"
 relativeURLs = true  # 解决子路径资源加载问题

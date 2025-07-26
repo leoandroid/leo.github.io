@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Leo Blogs</title><link>https://github.com/leoandroid/leo.github.io/post/</link><description>Recent content in Posts on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/leoandroid/leo.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>RxJava 文档翻译</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid><description>&lt;h2 id="release-version">Release Version&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Leo Blogs</title><link>https://leoandroid/leo.github.io/post/</link><description>Recent content in Posts on Leo Blogs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://leoandroid/leo.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>RxJava 文档翻译</title><link>https://leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid><description>&lt;h2 id="release-version">Release Version&lt;/h2>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -32,7 +32,7 @@
 &lt;h4 id="create---create-an-observable-from-scratch-by-calling-observer-methods-programmatically">Create - &lt;a href="https://reactivex.io/documentation/operators/create.html">create an Observable from scratch by calling observer methods programmatically&lt;/a>&lt;/h4>
 &lt;blockquote>
 &lt;p>You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.&lt;!-- raw HTML omitted -->
-A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.&lt;/p></description></item><item><title>MacOS-14.1 下载/编译/阅读 AOSP</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</link><pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.&lt;/p></description></item><item><title>MacOS-14.1 下载/编译/阅读 AOSP</title><link>https://leoandroid/leo.github.io/post/2023-12-08-build-aosp/</link><pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2023-12-08-build-aosp/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
 &lt;blockquote>
 &lt;p>&lt;strong>&lt;a href="https://source.android.google.cn/docs/setup/start/requirements?hl=zh-cn">警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。
 &lt;/a>&lt;/strong>
@@ -58,7 +58,7 @@ A well-formed finite Observable must attempt to call either the observer’s onC
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。&lt;/p>
 &lt;p>如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hdiutil resize -size &amp;lt;new-size-you-want&amp;gt;g ~/android.dmg.sparseimage
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 &lt;code>~/.bash_profile&lt;/code> 中添加辅助函数：&lt;/p></description></item><item><title>上传 Android Library 到 Maven Center</title><link>https://github.com/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</link><pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</guid><description>&lt;p>&lt;code>过时废弃，声明如下&lt;/code>{:.error}&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 &lt;code>~/.bash_profile&lt;/code> 中添加辅助函数：&lt;/p></description></item><item><title>上传 Android Library 到 Maven Center</title><link>https://leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</link><pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</guid><description>&lt;p>&lt;code>过时废弃，声明如下&lt;/code>{:.error}&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;h2 id="文档">文档&lt;/h2>
 &lt;ol>
@@ -102,7 +102,7 @@ A well-formed finite Observable must attempt to call either the observer’s onC
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. **Edit this ticket**, update the Group ID field with the new GroupId, and set Status to Open.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>More info: [https://central.sonatype.org/publish/requirements/coordinates/](https://central.sonatype.org/publish/requirements/coordinates/)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Issue &lt;strong>RESOLVED&lt;/strong>后，你就可以登录 &lt;a href="https://s01.oss.sonatype.org/#welcome">https://s01.oss.sonatype.org/#welcome&lt;/a> 准备上传Lirary了。&lt;/p></description></item><item><title>Chrome浏览器插件</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</guid><description>&lt;h2 id="插件">插件&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Issue &lt;strong>RESOLVED&lt;/strong>后，你就可以登录 &lt;a href="https://s01.oss.sonatype.org/#welcome">https://s01.oss.sonatype.org/#welcome&lt;/a> 准备上传Lirary了。&lt;/p></description></item><item><title>Chrome浏览器插件</title><link>https://leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</guid><description>&lt;h2 id="插件">插件&lt;/h2>
 &lt;h3 id="1-ontab-标签整理">1. &lt;a href="https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall">Ontab&lt;/a> 标签整理&lt;/h3>
 &lt;blockquote>
 &lt;p>Save up to 95% memory and reduce tab clutter
@@ -114,7 +114,7 @@ Whenever you find yourself with too many tabs, click the OneTab icon to convert 
 &lt;p>&lt;img src="assets/images/20240503/itab.png" alt="iTab">&lt;/p>
 &lt;h3 id="3-darkreader-阅读模式">3. &lt;a href="https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh">DarkReader&lt;/a> 阅读模式&lt;/h3>
 &lt;blockquote>
-&lt;p>Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.&lt;/p></description></item><item><title>git-chglog 自动生产 CHANGES</title><link>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</guid><description>&lt;h2 id="git-chglog-自动生成-changes-log">&lt;a href="https://github.com/git-chglog/git-chglog">git-chglog&lt;/a> 自动生成 changes log&lt;/h2>
+&lt;p>Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.&lt;/p></description></item><item><title>git-chglog 自动生产 CHANGES</title><link>https://leoandroid/leo.github.io/post/2025-07-27-git-chglog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2025-07-27-git-chglog/</guid><description>&lt;h2 id="git-chglog-自动生成-changes-log">&lt;a href="https://github.com/git-chglog/git-chglog">git-chglog&lt;/a> 自动生成 changes log&lt;/h2>
 &lt;h3 id="mac-上安装使用">Mac 上安装使用&lt;/h3>
 &lt;p>&lt;a href="https://brew.sh/">Homebrew&lt;/a> (for macOS users)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew tap git-chglog/git-chglog
@@ -185,7 +185,7 @@ Whenever you find yourself with too many tabs, click the OneTab icon to convert 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ git-chglog --path path/to/my/component --output CHANGELOG.component.md
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Filter commits by specific paths or files in git and output to a component specific changelog.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 常用的命令</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</guid><description>&lt;h2 id="1-mac系统设置任何来源安装第三方软件">1. Mac系统设置任何来源安装第三方软件&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 常用的命令</title><link>https://leoandroid/leo.github.io/post/2024-05-03-mac-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2024-05-03-mac-commands/</guid><description>&lt;h2 id="1-mac系统设置任何来源安装第三方软件">1. Mac系统设置任何来源安装第三方软件&lt;/h2>
 &lt;pre>&lt;code>```shell
 sudo spctl --master-disable
 ```
@@ -195,7 +195,7 @@ sudo spctl --master-disable
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig getifaddr en0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ethernet ip&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig getifaddr en1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 应用</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</guid><description>&lt;h2 id="toolbar-小应用">Toolbar 小应用&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac 应用</title><link>https://leoandroid/leo.github.io/post/2024-05-03-mac-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2024-05-03-mac-tools/</guid><description>&lt;h2 id="toolbar-小应用">Toolbar 小应用&lt;/h2>
 &lt;h3 id="1--itraffic-流量监测工具">1. &lt;a href="https://github.com/foamzou/ITraffic-monitor-for-mac">Itraffic&lt;/a> 流量监测工具&lt;/h3>
 &lt;blockquote>
 &lt;p>Monitor for displaying process traffic on Mac Status bar
@@ -207,7 +207,7 @@ The macOS version should &amp;gt;= 10.15, since the project use swiftUI&lt;/p>&l
 &lt;p>&lt;img src="assets/images/20240503/keyclucase.png" alt="keyclucase">&lt;/p>
 &lt;h3 id="3-hidden-帮助隐藏-mac-tool-bar-上的图标">3. &lt;a href="https://github.com/dwarvesf/hidden">Hidden&lt;/a> 帮助隐藏 Mac Tool Bar 上的图标&lt;/h3>
 &lt;blockquote>
-&lt;p>Hidden Bar lets you hide menu bar items to give your Mac a cleaner look.&lt;/p></description></item><item><title>Mac 疑难杂症</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</guid><description>&lt;h2 id="1-ruby-安装使用过程中遇到的问题">1. Ruby 安装使用过程中遇到的问题:&lt;/h2>
+&lt;p>Hidden Bar lets you hide menu bar items to give your Mac a cleaner look.&lt;/p></description></item><item><title>Mac 疑难杂症</title><link>https://leoandroid/leo.github.io/post/2024-05-03-mac-issues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2024-05-03-mac-issues/</guid><description>&lt;h2 id="1-ruby-安装使用过程中遇到的问题">1. Ruby 安装使用过程中遇到的问题:&lt;/h2>
 &lt;ol>
 &lt;li>Ruby/Gem 下载慢的问题:&lt;/li>
 &lt;/ol>
@@ -225,7 +225,7 @@ The macOS version should &amp;gt;= 10.15, since the project use swiftUI&lt;/p>&l
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>/opt/homebrew/opt/ruby/bin:$PATH
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>gem environment gemdir&lt;span style="color:#e6db74">`&lt;/span>/bin:$PATH
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span> 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Markdown 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid><description>&lt;h2 id="总览">总览&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Markdown 文档</title><link>https://leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid><description>&lt;h2 id="总览">总览&lt;/h2>
 &lt;p>几乎所有 &lt;a href="https://www.markdown.xyz/cheat-sheet/">Markdown&lt;/a> 应用程序都支持 John Gruber 原始设计文档中列出的 Markdown 基本语法。但是，Markdown 处理程序之间存在着细微的变化和差异，我们都会尽可能标记出来。&lt;/p>
 &lt;h2 id="标题headings">标题（Headings）&lt;/h2>
 &lt;!-- raw HTML omitted -->
@@ -453,7 +453,7 @@ The macOS version should &amp;gt;= 10.15, since the project use swiftUI&lt;/p>&l
 &lt;p>&amp;lt;head&amp;gt;
 &amp;lt;title&amp;gt;Test&amp;lt;/title&amp;gt;
 &amp;lt;/head&amp;gt;
-&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted --> &lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>TeXt 文档</title><link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</guid><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg" alt="TeXt Theme">&lt;/p>
+&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted --> &lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>TeXt 文档</title><link>https://leoandroid/leo.github.io/post/2024-05-03-text-document/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://leoandroid/leo.github.io/post/2024-05-03-text-document/</guid><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg" alt="TeXt Theme">&lt;/p>
 &lt;p>&lt;a href="https://kitian616.github.io/jekyll-TeXt-theme/docs/zh/layouts">TeXt&lt;/a> is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.&lt;/p>
 &lt;h2 id="skins">Skins&lt;/h2>
 &lt;p>TeXt has 6 built-in skins, you can also set up your own skin.&lt;/p>

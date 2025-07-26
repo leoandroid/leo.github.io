@@ -1,29 +1,35 @@
-name: Hugo Build and Deploy
+name: deploy
 
 on:
   push:
-    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    # Runs everyday at 8:00 AM
+    - cron: "0 0 * * *"
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
-          submodules: true  # 重要！获取主题子模块
+          submodules: true
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
-          extended: true  # 需要扩展版支持SCSS
+          hugo-version: "latest"
 
-      - name: Build
-        run: hugo --minify
+      - name: Build Web
+        run: hugo
 
-      - name: Deploy
+      - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: ./public  # 匹配hugo输出目录
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          EXTERNAL_REPOSITORY: leoandroid/leo.github.io
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./public
+          commit_message: ${{ github.event.head_commit.message }}

@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Leo Blogs</title>
-    <link>http://localhost:50025/leoandroid/leo.github.io/tags/</link>
+    <link>http://localhost:1313/repo-name/tags/</link>
     <description>Recent content in Tags on Leo Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50025/leoandroid/leo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/repo-name/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RxJava</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/rxjava/</link>
+      <link>http://localhost:1313/repo-name/tags/rxjava/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/rxjava/</guid>
+      <guid>http://localhost:1313/repo-name/tags/rxjava/</guid>
       <description></description>
     </item>
     <item>
       <title>文档</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/%E6%96%87%E6%A1%A3/</link>
+      <link>http://localhost:1313/repo-name/tags/%E6%96%87%E6%A1%A3/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/%E6%96%87%E6%A1%A3/</guid>
+      <guid>http://localhost:1313/repo-name/tags/%E6%96%87%E6%A1%A3/</guid>
       <description></description>
     </item>
     <item>
       <title>Android</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/android/</link>
+      <link>http://localhost:1313/repo-name/tags/android/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/android/</guid>
+      <guid>http://localhost:1313/repo-name/tags/android/</guid>
       <description></description>
     </item>
     <item>
       <title>AOSP</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/aosp/</link>
+      <link>http://localhost:1313/repo-name/tags/aosp/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/aosp/</guid>
+      <guid>http://localhost:1313/repo-name/tags/aosp/</guid>
       <description></description>
     </item>
     <item>
       <title>废弃</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/%E5%BA%9F%E5%BC%83/</link>
+      <link>http://localhost:1313/repo-name/tags/%E5%BA%9F%E5%BC%83/</link>
       <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/%E5%BA%9F%E5%BC%83/</guid>
+      <guid>http://localhost:1313/repo-name/tags/%E5%BA%9F%E5%BC%83/</guid>
       <description></description>
     </item>
     <item>
       <title>Chrome</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/chrome/</link>
+      <link>http://localhost:1313/repo-name/tags/chrome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/chrome/</guid>
+      <guid>http://localhost:1313/repo-name/tags/chrome/</guid>
       <description></description>
     </item>
     <item>
       <title>Extensions</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/extensions/</link>
+      <link>http://localhost:1313/repo-name/tags/extensions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/extensions/</guid>
+      <guid>http://localhost:1313/repo-name/tags/extensions/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/git/</link>
+      <link>http://localhost:1313/repo-name/tags/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/git/</guid>
+      <guid>http://localhost:1313/repo-name/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Jkeyll</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/jkeyll/</link>
+      <link>http://localhost:1313/repo-name/tags/jkeyll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/jkeyll/</guid>
+      <guid>http://localhost:1313/repo-name/tags/jkeyll/</guid>
       <description></description>
     </item>
     <item>
       <title>Mac</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/mac/</link>
+      <link>http://localhost:1313/repo-name/tags/mac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/mac/</guid>
+      <guid>http://localhost:1313/repo-name/tags/mac/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>http://localhost:50025/leoandroid/leo.github.io/tags/markdown/</link>
+      <link>http://localhost:1313/repo-name/tags/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50025/leoandroid/leo.github.io/tags/markdown/</guid>
+      <guid>http://localhost:1313/repo-name/tags/markdown/</guid>
       <description></description>
     </item>
   </channel>

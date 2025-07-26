@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AOSP on Leo Blogs</title>
-    <link>http://localhost:54865/leoandroid/leo.github.io/tags/aosp/</link>
+    <link>http://localhost:1313/repo-name/tags/aosp/</link>
     <description>Recent content in AOSP on Leo Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54865/leoandroid/leo.github.io/tags/aosp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/repo-name/tags/aosp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacOS-14.1 下载/编译/阅读 AOSP</title>
-      <link>http://localhost:54865/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</link>
+      <link>http://localhost:1313/repo-name/post/2023-12-08-build-aosp/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54865/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</guid>
+      <guid>http://localhost:1313/repo-name/post/2023-12-08-build-aosp/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://source.android.google.cn/docs/setup/start/requirements?hl=zh-cn&#34;&gt;警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。&#xA;&lt;/a&gt;&lt;/strong&gt;&#xA;&lt;strong&gt;针对 &lt;code&gt;Linux&lt;/code&gt; 系统 Google 推出了 &lt;a href=&#34;https://developer.android.com/studio/platform?hl=zh-cn&#34;&gt;平台版AndroidStudio&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;文档版本：1.0.1&lt;/p&gt;&#xA;&lt;p&gt;设备信息:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Mac OS: 14.1.2&lt;/li&gt;&#xA;&lt;li&gt;Chip: M1&lt;/li&gt;&#xA;&lt;li&gt;RAM: 16G&lt;/li&gt;&#xA;&lt;li&gt;Core: 8&lt;/li&gt;&#xA;&lt;li&gt;XCode: &lt;a href=&#34;https://download.developer.apple.com&#34;&gt;13.2.1&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Android Version: android-12.0.0_r3&lt;/li&gt;&#xA;&lt;li&gt;硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;编译环境准备&#34;&gt;编译环境准备&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-安装旧版-xcode&#34;&gt;1. 安装旧版 XCode&lt;/h3&gt;&#xA;&lt;p&gt;因&lt;code&gt;AOSP&lt;/code&gt;不再对 MAC 进行支持，所以我们使用最新版的&lt;code&gt;XCode&lt;/code&gt;会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以&lt;code&gt;Go&lt;/code&gt; 和 &lt;code&gt;Rust&lt;/code&gt;产生的问题最多。&lt;/p&gt;&#xA;&lt;p&gt;我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用&lt;a href=&#34;https://download.developer.apple.com&#34;&gt;XCode13.2.1&lt;/a&gt;这样会帮助你避免很多不必要的麻烦。&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-创建区分大小写的磁盘映像&#34;&gt;2. 创建区分大小写的磁盘映像&lt;/h3&gt;&#xA;&lt;p&gt;通过 shell 使用以下命令创建磁盘映像：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hdiutil create -type SPARSE -fs &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Case-sensitive Journaled HFS+&amp;#39;&lt;/span&gt; -size 1024g ~/android.dmg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。&lt;/p&gt;&#xA;&lt;p&gt;如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hdiutil resize -size &amp;lt;new-size-you-want&amp;gt;g ~/android.dmg.sparseimage&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 &lt;code&gt;~/.bash_profile&lt;/code&gt; 中添加辅助函数：&lt;/p&gt;</description>
     </item>
   </channel>

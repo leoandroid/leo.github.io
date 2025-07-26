@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chrome on Leo Blogs</title>
-    <link>http://localhost:54865/leoandroid/leo.github.io/tags/chrome/</link>
+    <link>http://localhost:1313/repo-name/tags/chrome/</link>
     <description>Recent content in Chrome on Leo Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:54865/leoandroid/leo.github.io/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/repo-name/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chrome浏览器插件</title>
-      <link>http://localhost:54865/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</link>
+      <link>http://localhost:1313/repo-name/post/2024-05-03-chrome-extentions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54865/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</guid>
+      <guid>http://localhost:1313/repo-name/post/2024-05-03-chrome-extentions/</guid>
       <description>&lt;h2 id=&#34;插件&#34;&gt;插件&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-ontab-标签整理&#34;&gt;1. &lt;a href=&#34;https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall&#34;&gt;Ontab&lt;/a&gt; 标签整理&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Save up to 95% memory and reduce tab clutter&#xA;Whenever you find yourself with too many tabs, click the OneTab icon to convert all of your tabs into a list. When you need to access the tabs again, you can either restore them individually or all at once.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;assets/images/20240503/onetab.png&#34; alt=&#34;oneTab&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-itab-new-tab-新标签页&#34;&gt;2. &lt;a href=&#34;https://chromewebstore.google.com/detail/itab-new-tab/mhloojimgilafopcmlcikiidgbbnelip&#34;&gt;iTab New Tab&lt;/a&gt; 新标签页&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;iTab新标签页,强大的浏览器新标签页,可以自定义自己网站捷径, 以及搜索引擎. 并且内置多个app等功能. 可以设置捷径图标样式,一个让你不受广告干扰的个性化卡片式起始页插件，创建和编辑属于您自己的浏览器标签页，精美日历、炫酷天气、每日头条、海量壁纸、常用网址随心订制&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;assets/images/20240503/itab.png&#34; alt=&#34;iTab&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;3-darkreader-阅读模式&#34;&gt;3. &lt;a href=&#34;https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh&#34;&gt;DarkReader&lt;/a&gt; 阅读模式&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.&lt;/p&gt;</description>
     </item>
   </channel>

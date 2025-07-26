@@ -1,45 +1,55 @@
-name: Hugo Deploy
+name: deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4  # 必须升级到 v4
         with:
-          submodules: recursive
+          submodules: recursive    # 确保主题子模块正确初始化
           fetch-depth: 0
+
+      - name: Clean conflicting files
+        run: |
+          # 删除所有冲突的示例内容
+          find themes -name "exampleSite" -exec rm -rf {} +
+          
+          # 删除有问题的 SCSS 文件
+          rm -f content/post/assets/css/main.scss
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
-          extended: true  # 如果需要扩展功能
+          extended: true  # 确保支持 SCSS
 
-      - name: Build
+      - name: Build Web
         run: |
+          # 强制清理并构建
           hugo --minify --cleanDestinationDir
-          touch public/.nojekyll  # 关键禁用步骤
+          
+          # 关键步骤：创建 .nojekyll 文件
+          touch public/.nojekyll
+          
+          # 验证文件存在
+          echo "验证 .nojekyll 文件:"
+          ls -la public/.nojekyll
 
-      - name: Verify Build Output
-        run: ls -la public
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: leoandroid/leo.github.io
           publish_branch: master
           publish_dir: ./public
-          full_commit_message: |
-            Deploy from ${{ github.sha }}
-            ${{ github.event.head_commit.message }}
+          commit_message: ${{ github.event.head_commit.message }}
+          force_orphan: true  # 强制清理目标分支历史
+          keep_files: false    # 完全替换目标分支内容

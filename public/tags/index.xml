@@ -1,1 +1,100 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Leo Blogs</title><link>http://192.168.0.1:8080/tags/</link><description>Recent Posts in Tags on Leo Blogs</description><generator>Hugo 0.148.1</generator><language>en-us</language><lastBuildDate>Sun, 27 Jul 2025 03:52:35 +0800</lastBuildDate><atom:link href="http://192.168.0.1:8080/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>RxJava</title><link>http://192.168.0.1:8080/tags/rxjava/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/rxjava/</guid><description/></item><item><title>文档</title><link>http://192.168.0.1:8080/tags/%E6%96%87%E6%A1%A3/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/%E6%96%87%E6%A1%A3/</guid><description/></item><item><title>Android</title><link>http://192.168.0.1:8080/tags/android/</link><pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/android/</guid><description/></item><item><title>AOSP</title><link>http://192.168.0.1:8080/tags/aosp/</link><pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/aosp/</guid><description/></item><item><title>废弃</title><link>http://192.168.0.1:8080/tags/%E5%BA%9F%E5%BC%83/</link><pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/%E5%BA%9F%E5%BC%83/</guid><description/></item><item><title>Chrome</title><link>http://192.168.0.1:8080/tags/chrome/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/chrome/</guid><description/></item><item><title>Extensions</title><link>http://192.168.0.1:8080/tags/extensions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/extensions/</guid><description/></item><item><title>Git</title><link>http://192.168.0.1:8080/tags/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/git/</guid><description/></item><item><title>Jkeyll</title><link>http://192.168.0.1:8080/tags/jkeyll/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/jkeyll/</guid><description/></item><item><title>Mac</title><link>http://192.168.0.1:8080/tags/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/mac/</guid><description/></item><item><title>Markdown</title><link>http://192.168.0.1:8080/tags/markdown/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://192.168.0.1:8080/tags/markdown/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Leo Blogs</title>
+    <link>http://localhost:62840/tags/</link>
+    <description>Recent Posts in Tags on Leo Blogs</description>
+    <generator>Hugo 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jul 2025 03:59:58 +0800</lastBuildDate>
+    <atom:link href="http://localhost:62840/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RxJava</title>
+      <link>http://localhost:62840/tags/rxjava/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/rxjava/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>文档</title>
+      <link>http://localhost:62840/tags/%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/%E6%96%87%E6%A1%A3/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Android</title>
+      <link>http://localhost:62840/tags/android/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/android/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>AOSP</title>
+      <link>http://localhost:62840/tags/aosp/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/aosp/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>废弃</title>
+      <link>http://localhost:62840/tags/%E5%BA%9F%E5%BC%83/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/%E5%BA%9F%E5%BC%83/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Chrome</title>
+      <link>http://localhost:62840/tags/chrome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/chrome/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Extensions</title>
+      <link>http://localhost:62840/tags/extensions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/extensions/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:62840/tags/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/git/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Jkeyll</title>
+      <link>http://localhost:62840/tags/jkeyll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/jkeyll/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Mac</title>
+      <link>http://localhost:62840/tags/mac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/mac/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>http://localhost:62840/tags/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:62840/tags/markdown/</guid>
+      <description></description>
+      
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,5 @@
+theme = "github-style"
+baseURL = "https://github.com/leoandroid/leo.github.io"
+publishDir = "docs"
+relativeURLs = true  # 解决子路径资源加载问题
+canonifyURLs = true  # 转换相对路径为绝对路径

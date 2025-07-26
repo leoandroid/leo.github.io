@@ -2,7 +2,7 @@
 
 1. Hugo 是用 Go 实现的博客工具，采用 Markdown 进行文章编辑，自动生成静态站点文件，支持丰富的主题配置，也可以通过
 js 嵌入像是评论系统等插件，高度定制化。
-2. 所有的操作都需要在 robin-site 目录下
+2. 当前主题使用[hugo-brewm](https://github.com/foxihd/hugo-brewm)
 
 ## 文档
 

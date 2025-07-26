@@ -1,35 +1,45 @@
-name: deploy
+name: Hugo Deploy
 
 on:
   push:
+    branches: [ main ]
   workflow_dispatch:
-  schedule:
-    # Runs everyday at 8:00 AM
-    - cron: "0 0 * * *"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
+          extended: true  # 如果需要扩展功能
 
-      - name: Build Web
-        run: hugo
+      - name: Build
+        run: |
+          hugo --minify --cleanDestinationDir
+          touch public/.nojekyll  # 关键禁用步骤
 
-      - name: Deploy Web
+      - name: Verify Build Output
+        run: ls -la public
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          EXTERNAL_REPOSITORY: leoandroid/leo.github.io
-          PUBLISH_BRANCH: master
-          PUBLISH_DIR: _site
-          commit_message: ${{ github.event.head_commit.message }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: leoandroid/leo.github.io
+          publish_branch: master
+          publish_dir: ./public
+          full_commit_message: |
+            Deploy from ${{ github.sha }}
+            ${{ github.event.head_commit.message }}

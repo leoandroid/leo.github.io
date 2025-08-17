@@ -1,0 +1,5 @@
+title = 'Leo Blogs'
+languageCode = 'en-us'
+theme = "hugo-brewm"
+baseURL = "https://leo.github.io/"
+publishDir = "docs"

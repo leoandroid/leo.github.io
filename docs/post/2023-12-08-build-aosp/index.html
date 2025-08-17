@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61426&amp;path=livereload" data-no-instant defer></script>
+    <!-- head.html --><!-- meta.html -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MacOS-14.1 下载/编译/阅读 AOSP | Leo Blogs</title>
+<meta name="author" content="">
+<meta name="description" content="简介 警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。 针对 Linux 系统 Google 推出了 平台版AndroidStudio
+文档版本：1.0.1
+设备信息:
+Mac OS: 14.1.2 Chip: M1 RAM: 16G …" >
+<link rel="canonical" href="http://localhost:61426/post/2023-12-08-build-aosp/">
+
+
+<!-- js.html -->
+
+
+    <script src="http://localhost:61426/js/hugo-brewm.min.js" defer></script><!-- css.html -->
+
+
+    <link rel="stylesheet" href="http://localhost:61426/css/hugo-brewm.min.css">
+
+    <!-- css/inline.html -->
+    <style>
+         
+        body {max-width: 786px; margin: auto; padding: 2rem;}
+        img {max-width: 86vw;}
+    </style>
+    
+</head>
+<body >
+    <!-- header.html -->
+<header class="pagewidth">
+    <div id="background-header" class="background" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    
+    <nav aria-label="Bypass">
+        <a id="to-content" href="#content" aria-label="Skip to Main Content">
+            <span>Skip to Main Content</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+            <span class="screening" aria-hidden="true"></span>
+        </a>
+    </nav>
+    
+    
+    <details class="presentation" id="top-nav">
+        <summary class="on-deck">
+            <span class="t t2">Navigation</span>
+            <span class="menu-icon" role="presentation"></span>
+        </summary>
+        <nav tabindex="-1" aria-label="Top">
+            <!-- menu.html -->
+            
+            <!-- menu.html -->
+            <!-- i18n.html -->
+
+
+        </nav>
+        <div id="top-nav-screen" class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+    </details>
+</header>
+    
+    <!-- [main] baseof.html -->
+    <main id="page">
+        <!-- main/header.html -->
+        <header class="pagewidth">
+            
+                <!-- menu.html -->
+    <menu class="srm">
+        <a id="print-button" class="hide" href="javascript:window.print()" role="button" aria-label="Print">
+            <span class="t srt" role="tooltip">Print</span>
+        </a>
+        <a id="navigatorShare" href="#share" role="button" aria-label="Share">
+            <span class="t srt" role="tooltip">Share</span>
+        </a>
+        <a id="copyPermalink"  href="javascript:navigator.clipboard.writeText(window.location.href)" role="button" aria-label="Copy URL">
+            <span id="copy" class="t srt" role="tooltip">Copy URL</span>
+            <span id="isCopying" style="display: none;">Copying...</span>
+            <span id="copyText" style="display: none;">Copy URL</span>
+        </a>
+    </menu>
+    <button id="back" class="hide" type="button" onclick="history.back();" aria-label="Go Back">
+        <span class="t srt" role="tooltip">Go Back</span>
+    </button>
+            
+                <!-- nav.html -->
+<details class="presentation" aria-expanded="true" id="has-breadcrumb" open>
+    <summary id="breadcrumb" tabindex="-1">
+        <span>Breadcrumb</span>
+    </summary>
+        <nav aria-labelledby="breadcrumb">
+            <ul role="presentation" class="breadcrumb ">
+                    <!-- breadcrumb.html -->
+        <li>
+            <a href="http://localhost:61426/post/" aria-current="true">Posts
+            </a>
+        </li>
+    <li>
+        <a href="" aria-current="page" tabindex="-1">MacOS-14.1 下载/编译/阅读 AOSP
+        </a>
+    </li>
+            </ul>
+        </nav>
+</details>
+        </header>
+        <div id="top" role="presentation">
+            
+        </div>
+        
+    <article id="main-article" class="pagewidth sf"
+        role="document" aria-labelledby="title"
+            data-pagefind-ignore="all">
+        <header aria-labelledby="title">
+            
+            <!-- title.html -->
+        <h1 id="title"
+            data-bionRead-safe
+            >MacOS-14.1 下载/编译/阅读 AOSP</h1>
+        </header>
+        <!-- audio.html -->
+        <section aria-labelledby="title" id="content" data-bionRead-safe>
+                <h2 id="简介">简介</h2>
+<blockquote>
+<p><strong><a href="https://source.android.google.cn/docs/setup/start/requirements?hl=zh-cn">警告：自 2021 年 6 月 22 日起，我们将不再支持在 Windows 或 MacOS 上进行构建。
+</a></strong>
+<strong>针对 <code>Linux</code> 系统 Google 推出了 <a href="https://developer.android.com/studio/platform?hl=zh-cn">平台版AndroidStudio</a></strong></p>
+<p>文档版本：1.0.1</p>
+<p>设备信息:</p>
+<ul>
+<li>Mac OS: 14.1.2</li>
+<li>Chip: M1</li>
+<li>RAM: 16G</li>
+<li>Core: 8</li>
+<li>XCode: <a href="https://download.developer.apple.com">13.2.1</a></li>
+<li>Android Version: android-12.0.0_r3</li>
+<li>硬盘空间：我编译成功后占用空间大概244G，所以应准备大概300G左右用来编译。</li>
+</ul></blockquote>
+<h2 id="编译环境准备">编译环境准备</h2>
+<h3 id="1-安装旧版-xcode">1. 安装旧版 XCode</h3>
+<p>因<code>AOSP</code>不再对 MAC 进行支持，所以我们使用最新版的<code>XCode</code>会遇到大量的问题，这些问题的产生是因为 XCode 包含的开发工具包的冲突导致的，其中尤以<code>Go</code> 和 <code>Rust</code>产生的问题最多。</p>
+<p>我们的主要任务是编译AOSP而不是解决这些冲突，所以我建议你直接使用<a href="https://download.developer.apple.com">XCode13.2.1</a>这样会帮助你避免很多不必要的麻烦。</p>
+<h3 id="2-创建区分大小写的磁盘映像">2. 创建区分大小写的磁盘映像</h3>
+<p>通过 shell 使用以下命令创建磁盘映像：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdiutil create -type SPARSE -fs <span style="color:#e6db74">&#39;Case-sensitive Journaled HFS+&#39;</span> -size 1024g ~/android.dmg
+</span></span></code></pre></div><p>这将创建一个 .dmg.sparseimage 文件，该文件在装载后可用作具有 Android 开发所需格式的存储卷。</p>
+<p>如果您以后需要更大的存储卷，还可以使用以下命令来调整稀疏映像的大小：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdiutil resize -size &lt;new-size-you-want&gt;g ~/android.dmg.sparseimage
+</span></span></code></pre></div><p>对于存储在主目录下的名为 android.dmg 的磁盘映像，您可以向 <code>~/.bash_profile</code> 中添加辅助函数：</p>
+<p>要在执行 mountAndroid 时装载磁盘映像，请运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> mountAndroid <span style="color:#f92672">{</span> hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>要在执行 umountAndroid 时卸载磁盘映像，请运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> umountAndroid<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> hdiutil detach /Volumes/android; <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="初始化下载编译-aosp将模块导入androidstudio">初始化/下载/编译 AOSP，将模块导入AndroidStudio</h2>
+<p><strong>请提前下载好 <code>diffutils</code>工具，避免编译到90%时报<code>VNDK</code>相关Error.</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install diffutils
+</span></span></code></pre></div><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/">清华AOSP镜像</a>文档建议了两种初始化方法，1. 下载初始化包 2. 直接 <code>repo init ...</code>。方法1的好处是能避免<code>repo init</code>失败的风险，但是我们现在要编译Android12，所以直接采取第二种方法通过<code>repo init</code>进行下载。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#1. repo 下载</span>
+</span></span><span style="display:flex;"><span>mkdir ~/bin
+</span></span><span style="display:flex;"><span>PATH<span style="color:#f92672">=</span>~/bin:$PATH
+</span></span><span style="display:flex;"><span>curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo
+</span></span><span style="display:flex;"><span>chmod +x repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2. 初始化 Android 12：</span>
+</span></span><span style="display:flex;"><span>repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-12.0.0_r3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#3. 同步源码树（以后只需执行这条命令来同步）：</span>
+</span></span><span style="display:flex;"><span>repo sync -c j64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#4. 初始化环境</span>
+</span></span><span style="display:flex;"><span>source build/envsetup.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#5. 避免 too many file open 的问题</span>
+</span></span><span style="display:flex;"><span>ulimit -S -n <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#6. lunch target</span>
+</span></span><span style="display:flex;"><span>lunch aosp_arm64-eng
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#7. 编译, make提供了-j的函数帮助我们加快编译速度。但是为了避免不必要的编译失败，我们</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   就不设置了，make会自己根据系统判断选择的。</span>
+</span></span><span style="display:flex;"><span>m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#8. 使用AIDEGen 导入模块到AndroidStudio</span>
+</span></span><span style="display:flex;"><span>aidegen framework -s -i s
+</span></span></code></pre></div><h2 id="遇见的编译错误">遇见的编译错误：</h2>
+<blockquote>
+<p>Error:
+<a href="https://stackoverflow.com/questions/74568500/failed-out-target-product-generic-arm64-obj-packaging-vndk-intermediates-check">VNDK library list has been changed. Changing the VNDK library list is not allowed in API locked </a></p>
+<p>Solution：
+<code>brew install diffutils</code></p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>  7% 7816/108971<span style="color:#f92672">]</span> build out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/check-list-timestamp
+</span></span><span style="display:flex;"><span>FAILED: out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/check-list-timestamp
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;(( diff --old-line-format=\&#34;Removed %L\&#34;    --new-line-format=\&#34;Added %L\&#34;      --unchanged-line-format=\&#34;\&#34;    build/make/target/product/gsi/29.txt out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/libs.txt     || ( echo -e \&#34; error: VNDK library list has been changed.\\n\&#34; \&#34;       Changing the VNDK library list is not allowed in API locked branches.\&#34;; exit 1 )) ) &amp;&amp; (mkdir -p out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/ ) &amp;&amp; (touch out/target/product/generic_arm64/obj/PACKAGING/vndk_intermediates/check-list-timestamp )&#34;</span>
+</span></span><span style="display:flex;"><span>diff: unrecognized option <span style="color:#e6db74">`</span>--old-line-format<span style="color:#f92672">=</span>Removed %L<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span><span style="display:flex;"><span>usage: diff <span style="color:#f92672">[</span>-aBbdilpTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-c | -e | -f | -n | -q | -u<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span> file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdilpTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> -C number file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdiltw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> -D string file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdilpTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> -U number file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbdilNPprsTtw<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-c | -e | -f | -n | -q | -u<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--normal<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-I pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L label<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>-F pattern<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-S name<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-X file<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-x pattern<span style="color:#f92672">]</span> dir1 dir2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>-aBbditwW<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--expand-tabs<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-all-blanks<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--ignore-blank-lines<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ignore-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--minimal<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--no-ignore-file-name-case<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--strip-trailing-cr<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">[</span>--suppress-common-lines<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tabsize<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--text<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--width<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            -y | --side-by-side file1 file2
+</span></span><span style="display:flex;"><span>       diff <span style="color:#f92672">[</span>--help<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--version<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span> error: VNDK library list has been changed.
+</span></span><span style="display:flex;"><span>        Changing the VNDK library list is not allowed in API locked branches.
+</span></span><span style="display:flex;"><span>12:06:16 ninja failed with: exit status <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="总结">总结：</h2>
+<ol>
+<li>按照文档这个流程跑下来，基本可以保证编译成功，而且遇到的问题极少。</li>
+<li>因为Google不再对Mac进行支持了，所以还是尽快投入Ubuntu的怀抱吧。</li>
+</ol>
+<h2 id="参考文档">参考文档</h2>
+<blockquote>
+<ul>
+<li><a href="https://www.mobibrw.com/2023/37102">macOS Big Sur(11.7.5)编译Android 12.0源码过程总结</a></li>
+<li><a href="https://source.android.google.cn/docs/setup?hl=zh-cn">Google 搭建编译环境文档</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/">清华 Git repo 镜像</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/">清华 AOSP 镜像</a></li>
+<li><a href="https://android.googlesource.com/platform/tools/asuite/+/refs/heads/main/aidegen/README.md">AIDEGen README</a></li>
+<li><a href="https://juejin.cn/post/7166061140298956836">使用 AIDEGen 将 AOSP 项目导入 Android Studio</a></li>
+</ul></blockquote>
+
+        </section>
+    </article>
+    <hr class="hide" style="margin: 1in 0;">
+    <div id="contentinfo" class="pagewidth" role="contentinfo" data-pagefind-ignore="all">
+    </div>
+    
+        
+        <!-- main/footer.html -->
+    </main>
+    <!-- footer.html -->
+<footer id="body-footer" class="pagewidth" style="display: none;">
+    <div id="background-footer" class="background hide" role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    <div id="focusMode"></div>
+    <!-- a11y.html --><details id="has-a11y" class="presentation js-details hide" name="on-deck" aria-haspopup="true" aria-labelledby="has-a11y-summary">
+    <summary id="has-a11y-summary" accesskey="a" aria-keyshortcuts="a">
+        <span>&nbsp;Accessibility</span>
+        <kbd class="key" aria-hidden="true">a</kbd>
+    </summary>
+    <!-- a11y console -->
+    <fieldset id="a11y" role="region" aria-label="Accessibility"
+        data-i18n-optimizeSR="Screen Reader Optimization"
+        data-i18n-optimizeSRdesc="Optimize display and resources for screen reader users who navigate with a pointer device."
+        data-i18n-colorSettings="Color Settings"
+        data-i18n-darkMode="Dark Mode"
+        data-i18n-light="Light"
+        data-i18n-dark="Dark"
+        data-i18n-contrast="Contrast"
+        data-i18n-lessContrast="Low"
+        data-i18n-moreContrast="High"
+        data-i18n-defaultContrast="Default"
+        data-i18n-colorPalette="Color Palette"
+        data-i18n-defaultColor="Default"
+        data-i18n-deuteranopia="Deuteranopia"
+        data-i18n-protanopia="Protanopia"
+        data-i18n-tritanopia="Tritanopia"
+        data-i18n-monochrome="Monochrome"
+        data-i18n-fontSize="Font Size"
+        data-i18n-baselineStretch="Baseline Stretch"
+        data-i18n-OpenDyslexic="Use OpenDyslexic Font"
+        data-i18n-menuControls="Accessibility Menu Controls"
+        data-i18n-save="Save"
+        data-i18n-reset="Reset"
+        data-i18n-close="Close"
+        data-i18n-bionRead="BionRead Mode"
+        data-i18n-focusMode="Focus Mode"
+        data-i18n-noLocalStorage="LocalStorage is not available in your browser. Settings won&#39;t be saved.">
+    </fieldset>
+    <div class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+</details>
+
+
+    <div id="useBionRead" class="sri"></div>
+    <!-- [top] bypass block -->
+    <nav aria-label="Bypass">
+        <a id="to-top" class="srm" href="#top" title="To Content Top" accesskey="c" aria-keyshortcuts="c" aria-label="To Content Top">
+            <span class="t srt">To Content Top</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+        </a>
+    </nav>
+</footer>
+    
+    <!-- [post] single.html -->
+    <div id="bionReadSnapshot" hidden></div>
+    <!-- [background] baseof.html -->
+    <div id="background-body"
+        role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+        <div id="dwclock" hidden>
+            <div id="min">
+                <div class="hand"></div>
+            </div>
+            <div id="hour">
+                <div class="hand"></div>
+            </div>
+        </div>
+    </div>
+</html>

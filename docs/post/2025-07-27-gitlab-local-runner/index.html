@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+    <!-- head.html --><!-- meta.html -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gitlab 部署 runner | Leo Blogs</title>
+<meta name="author" content="">
+<meta name="description" content="[[TOC]]
+GitLab Runner 配置 工作目录位置 ${HOME}/builds/&lt;unique-id&gt;/&lt;project-path&gt;
+注册命令示例：
+sudo gitlab-runner register Runtime platform arch=arm64 os=darwin …" >
+<meta name="keywords" content="Gitlab,Devops">
+<link rel="canonical" href="https://leo.github.io/post/2025-07-27-gitlab-local-runner/">
+
+
+<!-- js.html -->
+
+<script src="https://leo.github.io/js/hugo-brewm.min.js"
+            integrity="sha384-eREtmCXiO/0j2GrMdfCrAm3bkx5XEi72JZUAV7H1W8TIgi4zqr&#43;VV9WZPuHwSipj" crossorigin="anonymous"
+            defer></script><!-- css.html -->
+
+
+        <link rel="stylesheet" href="https://leo.github.io/css/hugo-brewm.min.css" integrity="sha256-PlcabznCvTCOmI511HgUlrG&#43;pWEKmFTvnOKL6MrUL3E=" crossorigin="anonymous">
+
+    <!-- css/inline.html -->
+    <style>
+         
+        body {max-width: 786px; margin: auto; padding: 2rem;}
+        img {max-width: 86vw;}
+    </style>
+    
+</head>
+<body >
+    <!-- header.html -->
+<header class="pagewidth">
+    <div id="background-header" class="background" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    
+    <nav aria-label="Bypass">
+        <a id="to-content" href="#content" aria-label="Skip to Main Content">
+            <span>Skip to Main Content</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+            <span class="screening" aria-hidden="true"></span>
+        </a>
+    </nav>
+    
+    
+    <details class="presentation" id="top-nav">
+        <summary class="on-deck">
+            <span class="t t2">Navigation</span>
+            <span class="menu-icon" role="presentation"></span>
+        </summary>
+        <nav tabindex="-1" aria-label="Top">
+            <!-- menu.html -->
+            
+            <!-- menu.html -->
+            <!-- i18n.html -->
+
+
+        </nav>
+        <div id="top-nav-screen" class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+    </details>
+</header>
+    
+    <!-- [main] baseof.html -->
+    <main id="page">
+        <!-- main/header.html -->
+        <header class="pagewidth">
+            
+                <!-- menu.html -->
+    <menu class="srm">
+        <a id="print-button" class="hide" href="javascript:window.print()" role="button" aria-label="Print">
+            <span class="t srt" role="tooltip">Print</span>
+        </a>
+        <a id="navigatorShare" href="#share" role="button" aria-label="Share">
+            <span class="t srt" role="tooltip">Share</span>
+        </a>
+        <a id="copyPermalink" class="hide" href="javascript:navigator.clipboard.writeText(window.location.href)" role="button" aria-label="Copy URL">
+            <span id="copy" class="t srt" role="tooltip">Copy URL</span>
+            <span id="isCopying" style="display: none;">Copying...</span>
+            <span id="copyText" style="display: none;">Copy URL</span>
+        </a>
+    </menu>
+    <button id="back" class="hide" type="button" onclick="history.back();" aria-label="Go Back">
+        <span class="t srt" role="tooltip">Go Back</span>
+    </button>
+            
+                <!-- nav.html -->
+<details class="presentation" aria-expanded="true" id="has-breadcrumb" open>
+    <summary id="breadcrumb" tabindex="-1">
+        <span>Breadcrumb</span>
+    </summary>
+        <nav aria-labelledby="breadcrumb">
+            <ul role="presentation" class="breadcrumb ">
+                    <!-- breadcrumb.html -->
+        <li>
+            <a href="https://leo.github.io/post/" aria-current="true">Posts
+            </a>
+        </li>
+    <li>
+        <a href="" aria-current="page" tabindex="-1">Gitlab 部署 runner
+        </a>
+    </li>
+            </ul>
+        </nav>
+</details>
+        </header>
+        <div id="top" role="presentation">
+            
+        </div>
+        
+    <article id="main-article" class="pagewidth sf"
+        role="document" aria-labelledby="title"
+            data-pagefind-ignore="all">
+        <header aria-labelledby="title">
+            
+            <!-- title.html -->
+        <h1 id="title"
+            data-bionRead-safe
+            >Gitlab 部署 runner</h1>
+        </header>
+        <!-- audio.html -->
+        <section aria-labelledby="title" id="content" data-bionRead-safe>
+                <p>[[<em>TOC</em>]]</p>
+<h2 id="gitlab-runner-配置">GitLab Runner 配置</h2>
+<p><strong>工作目录位置</strong>
+<code>${HOME}/builds/&lt;unique-id&gt;/&lt;project-path&gt;</code></p>
+<p><strong>注册命令示例</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo gitlab-runner register
+</span></span><span style="display:flex;"><span>Runtime platform      arch<span style="color:#f92672">=</span>arm64 os<span style="color:#f92672">=</span>darwin pid<span style="color:#f92672">=</span><span style="color:#ae81ff">81548</span> revision<span style="color:#f92672">=</span>2b813ade version<span style="color:#f92672">=</span>18.1.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 按提示输入以下信息：</span>
+</span></span><span style="display:flex;"><span>GitLab 实例 URL： gitlab 仓库 URL
+</span></span><span style="display:flex;"><span>注册令牌：         gitlab 令牌
+</span></span><span style="display:flex;"><span>Runner 描述：     关于  runner 的简单描述
+</span></span><span style="display:flex;"><span>标签：            tag 在写 CI/CD 脚本时需要使用
+</span></span><span style="display:flex;"><span>执行器类型：       shell, 因为我们是在  mac 上部署， 所以这里选 shell
+</span></span></code></pre></div><p><strong>注册命令</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  ~ sudo gitlab-runner register
+</span></span><span style="display:flex;"><span>Password:
+</span></span><span style="display:flex;"><span>Runtime platform                                    arch<span style="color:#f92672">=</span>arm64 os<span style="color:#f92672">=</span>darwin pid<span style="color:#f92672">=</span><span style="color:#ae81ff">81548</span> revision<span style="color:#f92672">=</span>2b813ade version<span style="color:#f92672">=</span>18.1.1
+</span></span><span style="display:flex;"><span>Running in system-mode.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Created missing unique system ID                    system_id<span style="color:#f92672">=</span>s_5944e08b6352
+</span></span><span style="display:flex;"><span>Enter the GitLab instance URL <span style="color:#f92672">(</span><span style="color:#66d9ef">for</span> example, https://gitlab.com/<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>https://gitlab.com/
+</span></span><span style="display:flex;"><span>Enter the registration token:
+</span></span><span style="display:flex;"><span>token
+</span></span><span style="display:flex;"><span>Enter a description <span style="color:#66d9ef">for</span> the runner:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>MacBook.local<span style="color:#f92672">]</span>: 描述这是一个什么 runner
+</span></span><span style="display:flex;"><span>Enter tags <span style="color:#66d9ef">for</span> the runner <span style="color:#f92672">(</span>comma-separated<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>runner tag
+</span></span><span style="display:flex;"><span>Enter optional maintenance note <span style="color:#66d9ef">for</span> the runner:
+</span></span><span style="display:flex;"><span>描述
+</span></span><span style="display:flex;"><span>WARNING: Support <span style="color:#66d9ef">for</span> registration tokens and runner parameters in the <span style="color:#e6db74">&#39;register&#39;</span> command has been deprecated in GitLab Runner 15.6 and will be replaced with support <span style="color:#66d9ef">for</span> authentication tokens. For more information, see https://docs.gitlab.com/ci/runners/new_creation_workflow/
+</span></span><span style="display:flex;"><span>Registering runner... succeeded                     correlation_id<span style="color:#f92672">=</span>1P0fJ8OCUX5 runner<span style="color:#f92672">=</span>JHLoeVy-
+</span></span><span style="display:flex;"><span>Enter an executor: shell, ssh, docker, docker+machine, docker-autoscaler, custom, parallels, virtualbox, docker-windows, kubernetes, instance:
+</span></span><span style="display:flex;"><span>shell
+</span></span><span style="display:flex;"><span>Runner registered successfully. Feel free to start it, but <span style="color:#66d9ef">if</span> it<span style="color:#960050;background-color:#1e0010">&#39;</span>s running already the config should be automatically reloaded!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Configuration <span style="color:#f92672">(</span>with the authentication token<span style="color:#f92672">)</span> was saved in <span style="color:#e6db74">&#34;/etc/gitlab-runner/config.toml&#34;</span>
+</span></span></code></pre></div><h2 id="本地-runner-管理">本地 Runner 管理</h2>
+<p><strong>常用操作命令</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>命令</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>启动服务</td>
+          <td><code>brew services start gitlab-runner</code></td>
+          <td>后台运行 Runner</td>
+      </tr>
+      <tr>
+          <td>验证状态</td>
+          <td><code>sudo gitlab-runner verify</code></td>
+          <td>检查 Runner 活性</td>
+      </tr>
+      <tr>
+          <td>停止服务</td>
+          <td><code>brew services stop gitlab-runner</code></td>
+          <td>停止后台运行</td>
+      </tr>
+      <tr>
+          <td>查看日志</td>
+          <td><code>tail -f /usr/local/var/log/gitlab-runner.log</code></td>
+          <td>监控运行状态</td>
+      </tr>
+  </tbody>
+</table>
+
+        </section>
+    </article>
+    <hr class="hide" style="margin: 1in 0;">
+    <div id="contentinfo" class="pagewidth" role="contentinfo" data-pagefind-ignore="all">
+    </div>
+    
+        
+        <!-- main/footer.html -->
+    </main>
+    <!-- footer.html -->
+<footer id="body-footer" class="pagewidth" style="display: none;">
+    <div id="background-footer" class="background hide" role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    <div id="focusMode"></div>
+    <!-- a11y.html --><details id="has-a11y" class="presentation js-details hide" name="on-deck" aria-haspopup="true" aria-labelledby="has-a11y-summary">
+    <summary id="has-a11y-summary" accesskey="a" aria-keyshortcuts="a">
+        <span>&nbsp;Accessibility</span>
+        <kbd class="key" aria-hidden="true">a</kbd>
+    </summary>
+    <!-- a11y console -->
+    <fieldset id="a11y" role="region" aria-label="Accessibility"
+        data-i18n-optimizeSR="Screen Reader Optimization"
+        data-i18n-optimizeSRdesc="Optimize display and resources for screen reader users who navigate with a pointer device."
+        data-i18n-colorSettings="Color Settings"
+        data-i18n-darkMode="Dark Mode"
+        data-i18n-light="Light"
+        data-i18n-dark="Dark"
+        data-i18n-contrast="Contrast"
+        data-i18n-lessContrast="Low"
+        data-i18n-moreContrast="High"
+        data-i18n-defaultContrast="Default"
+        data-i18n-colorPalette="Color Palette"
+        data-i18n-defaultColor="Default"
+        data-i18n-deuteranopia="Deuteranopia"
+        data-i18n-protanopia="Protanopia"
+        data-i18n-tritanopia="Tritanopia"
+        data-i18n-monochrome="Monochrome"
+        data-i18n-fontSize="Font Size"
+        data-i18n-baselineStretch="Baseline Stretch"
+        data-i18n-OpenDyslexic="Use OpenDyslexic Font"
+        data-i18n-menuControls="Accessibility Menu Controls"
+        data-i18n-save="Save"
+        data-i18n-reset="Reset"
+        data-i18n-close="Close"
+        data-i18n-bionRead="BionRead Mode"
+        data-i18n-focusMode="Focus Mode"
+        data-i18n-noLocalStorage="LocalStorage is not available in your browser. Settings won&#39;t be saved.">
+    </fieldset>
+    <div class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+</details>
+
+
+    <div id="useBionRead" class="sri"></div>
+    <!-- [top] bypass block -->
+    <nav aria-label="Bypass">
+        <a id="to-top" class="srm" href="#top" title="To Content Top" accesskey="c" aria-keyshortcuts="c" aria-label="To Content Top">
+            <span class="t srt">To Content Top</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+        </a>
+    </nav>
+</footer>
+    
+    <!-- [post] single.html -->
+    <div id="bionReadSnapshot" hidden></div>
+    <!-- [background] baseof.html -->
+    <div id="background-body"
+        role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+        <div id="dwclock" hidden>
+            <div id="min">
+                <div class="hand"></div>
+            </div>
+            <div id="hour">
+                <div class="hand"></div>
+            </div>
+        </div>
+    </div>
+</html>

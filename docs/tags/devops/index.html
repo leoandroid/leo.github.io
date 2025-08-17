@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+    <!-- head.html --><!-- meta.html -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devops | Leo Blogs</title>
+<meta name="author" content="">
+<link rel="canonical" href="https://leo.github.io/tags/devops/">
+
+
+<link rel="alternate" type="application/rss+xml" href="https://leo.github.io/tags/devops/index.xml" title="Leo Blogs" />
+    <!-- js.html -->
+
+<script src="https://leo.github.io/js/hugo-brewm.min.js"
+            integrity="sha384-eREtmCXiO/0j2GrMdfCrAm3bkx5XEi72JZUAV7H1W8TIgi4zqr&#43;VV9WZPuHwSipj" crossorigin="anonymous"
+            defer></script><!-- css.html -->
+
+
+        <link rel="stylesheet" href="https://leo.github.io/css/hugo-brewm.min.css" integrity="sha256-PlcabznCvTCOmI511HgUlrG&#43;pWEKmFTvnOKL6MrUL3E=" crossorigin="anonymous">
+
+    <!-- css/inline.html -->
+    <style>
+         
+        body {max-width: 786px; margin: auto; padding: 2rem;}
+        img {max-width: 86vw;}
+    </style>
+    <!-- list.html [head] -->
+</head>
+<body >
+    <!-- header.html -->
+<header class="pagewidth">
+    <div id="background-header" class="background" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    
+    <nav aria-label="Bypass">
+        <a id="to-content" href="#list-posts" aria-label="Skip to Main Content">
+            <span>Skip to Main Content</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+            <span class="screening" aria-hidden="true"></span>
+        </a>
+    </nav>
+    
+    
+    <details class="presentation" id="top-nav">
+        <summary class="on-deck">
+            <span class="t t2">Navigation</span>
+            <span class="menu-icon" role="presentation"></span>
+        </summary>
+        <nav tabindex="-1" aria-label="Top">
+            <!-- menu.html -->
+            
+            <!-- menu.html -->
+            <!-- i18n.html -->
+
+
+        </nav>
+        <div id="top-nav-screen" class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+    </details>
+</header>
+    
+    <!-- [main] baseof.html -->
+    <main id="term">
+        <!-- main/header.html -->
+        <header class="pagewidth">
+            
+                <!-- menu.html -->
+    <menu class="srm">
+        <a id="print-button" class="hide" href="javascript:window.print()" role="button" aria-label="Print">
+            <span class="t srt" role="tooltip">Print</span>
+        </a>
+        <a id="navigatorShare" href="javascript:navigator.share({title: document.title, url: window.location.href})" role="button" aria-label="Share">
+            <span class="t srt" role="tooltip">Share</span>
+        </a>
+        <a id="copyPermalink" class="hide" href="javascript:navigator.clipboard.writeText(window.location.href)" role="button" aria-label="Copy URL">
+            <span id="copy" class="t srt" role="tooltip">Copy URL</span>
+            <span id="isCopying" style="display: none;">Copying...</span>
+            <span id="copyText" style="display: none;">Copy URL</span>
+        </a>
+    </menu>
+    <button id="back" class="hide" type="button" onclick="history.back();" aria-label="Go Back">
+        <span class="t srt" role="tooltip">Go Back</span>
+    </button>
+            
+                <!-- nav.html -->
+<details class="presentation" aria-expanded="true" id="has-breadcrumb" open>
+    <summary id="breadcrumb" tabindex="-1">
+        <span>Breadcrumb</span>
+    </summary>
+        <nav aria-labelledby="breadcrumb">
+            <ul role="presentation" class="breadcrumb ">
+                    <!-- breadcrumb.html -->
+        <li>
+            <a href="https://leo.github.io/tags/" aria-current="true">Tags
+            </a>
+        </li>
+    <li>
+        <a href="" aria-current="page" tabindex="-1">Devops
+        </a>
+    </li>
+            </ul>
+        </nav>
+</details>
+        </header>
+        <div id="top" role="presentation">
+            
+        </div>
+        
+        
+            <section id="list-posts" class="pagewidth"  aria-labelledby="list-post-heading">
+                <header id="tag" class="section-title">
+                    <strong id="list-post-heading">Posts on: <span class="tag">Devops</span>
+                    </strong>
+                </header>
+                    <div role="feed" aria-busy="false" aria-labelledby="list-post-heading">
+                        <article class="feed-item"
+        aria-posinset="1"
+        aria-setsize="1"
+        aria-labelledby="title-1"
+        aria-describedby="desc-1">
+        <hgroup>
+            <div>
+                <span>
+                </span>
+                
+                <!-- timestamp.html-->
+    <div >
+        <time class="doc-publish-date" datetime="2025-07-27T00:00:00&#43;00:00" data-time-label="Published on">July 27, 2025</time>
+    </div>
+            </div>
+            <a href="/post/2025-07-27-gitlab-local-runner/" class="sr0" tabindex="-1" aria-describedby="desc-1">
+                <h1 id="title-1">Gitlab 部署 runner</h1>
+            </a>
+        </hgroup>
+        <a class="sri" href="/post/2025-07-27-gitlab-local-runner/" aria-label="Gitlab 部署 runner" aria-describedby="desc-1"></a>
+        
+        <section >
+            <div class="par" id="desc-1">[[TOC]]
+GitLab Runner 配置 工作目录位置 ${HOME}/builds/&lt;unique-id&gt;/&lt;project-path&gt;
+注册命令示例：
+sudo gitlab-runner register Runtime platform arch=arm64 os=darwin pid=81548 revision=2b813ade version=18.1.1 # 按提示输入以下信息： GitLab 实例 URL： gitlab 仓库 URL 注册令牌： gitlab 令牌 Runner 描述： 关于 runner 的简单描述 标签： tag 在写 CI/CD 脚本时需要使用 执行器类型： shell, 因为我们是在 mac 上部署， 所以这里选 shell 注册命令：
+➜ ~ sudo gitlab-runner register Password: Runtime platform arch=arm64 os=darwin pid=81548 revision=2b813ade version=18.1.1 Running in system-mode. Created missing unique system ID system_id=s_5944e08b6352 Enter the GitLab instance URL (for example, https://gitlab.com/): https://gitlab.com/ Enter the registration token: token Enter a description for the runner: [MacBook.local]: 描述这是一个什么 runner Enter tags for the runner (comma-separated): runner tag Enter optional maintenance note for the runner: 描述 WARNING: Support for registration tokens and runner parameters in the &#39;register&#39; command has been deprecated in GitLab Runner 15.6 and will be replaced with support for authentication tokens. For more information, see https://docs.gitlab.com/ci/runners/new_creation_workflow/ Registering runner... succeeded correlation_id=1P0fJ8OCUX5 runner=JHLoeVy- Enter an executor: shell, ssh, docker, docker+machine, docker-autoscaler, custom, parallels, virtualbox, docker-windows, kubernetes, instance: shell Runner registered successfully. Feel free to start it, but if it&#39;s running already the config should be automatically reloaded! Configuration (with the authentication token) was saved in &#34;/etc/gitlab-runner/config.toml&#34; 本地 Runner 管理 常用操作命令
+
+            </div>
+        </section>
+        <footer>
+            <span class="readingTime">2 min read
+            </span>
+            
+                    <!-- terms.html -->
+    <ul class="rounded invert" role="presentation">
+            <li><a href="/tags/gitlab/" tabindex="-1">Gitlab</a></li>
+            <li><a href="/tags/devops/" tabindex="-1">Devops</a></li>
+    </ul>
+        </footer>
+    </article>
+                    </div>
+                    
+            </section>
+        <!-- main/footer.html -->
+    </main>
+    <!-- footer.html -->
+<footer id="body-footer" class="pagewidth" style="display: none;">
+    <div id="background-footer" class="background hide" role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+    </div>
+    <div id="focusMode"></div>
+    <!-- a11y.html --><details id="has-a11y" class="presentation js-details hide" name="on-deck" aria-haspopup="true" aria-labelledby="has-a11y-summary">
+    <summary id="has-a11y-summary" accesskey="a" aria-keyshortcuts="a">
+        <span>&nbsp;Accessibility</span>
+        <kbd class="key" aria-hidden="true">a</kbd>
+    </summary>
+    <!-- a11y console -->
+    <fieldset id="a11y" role="region" aria-label="Accessibility"
+        data-i18n-optimizeSR="Screen Reader Optimization"
+        data-i18n-optimizeSRdesc="Optimize display and resources for screen reader users who navigate with a pointer device."
+        data-i18n-colorSettings="Color Settings"
+        data-i18n-darkMode="Dark Mode"
+        data-i18n-light="Light"
+        data-i18n-dark="Dark"
+        data-i18n-contrast="Contrast"
+        data-i18n-lessContrast="Low"
+        data-i18n-moreContrast="High"
+        data-i18n-defaultContrast="Default"
+        data-i18n-colorPalette="Color Palette"
+        data-i18n-defaultColor="Default"
+        data-i18n-deuteranopia="Deuteranopia"
+        data-i18n-protanopia="Protanopia"
+        data-i18n-tritanopia="Tritanopia"
+        data-i18n-monochrome="Monochrome"
+        data-i18n-fontSize="Font Size"
+        data-i18n-baselineStretch="Baseline Stretch"
+        data-i18n-OpenDyslexic="Use OpenDyslexic Font"
+        data-i18n-menuControls="Accessibility Menu Controls"
+        data-i18n-save="Save"
+        data-i18n-reset="Reset"
+        data-i18n-close="Close"
+        data-i18n-bionRead="BionRead Mode"
+        data-i18n-focusMode="Focus Mode"
+        data-i18n-noLocalStorage="LocalStorage is not available in your browser. Settings won&#39;t be saved.">
+    </fieldset>
+    <div class="screening js-cpn" role="presentation" aria-hidden="true"></div>
+</details>
+
+
+    <div id="useBionRead" class="sri"></div>
+    <!-- [top] bypass block -->
+    <nav aria-label="Bypass">
+        <a id="to-top" class="srm" href="#top" title="To Content Top" accesskey="c" aria-keyshortcuts="c" aria-label="To Content Top">
+            <span class="t srt">To Content Top</span>
+            <kbd class="key" aria-hidden="true">c</kbd>
+        </a>
+    </nav>
+</footer>
+    
+    <!-- [background] baseof.html -->
+    <div id="background-body"
+        role="presentation" aria-hidden="true">
+        <div class="grain" hidden></div>
+        <div id="dwclock" hidden>
+            <div id="min">
+                <div class="hand"></div>
+            </div>
+            <div id="hour">
+                <div class="hand"></div>
+            </div>
+        </div>
+    </div>
+</html>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extensions on Leo Blogs</title>
-    <link>http://localhost:1313/tags/extensions/</link>
+    <link>http://localhost:52056/tags/extensions/</link>
     <description>Recent Posts in Extensions on Leo Blogs</description>
     <generator>Hugo 0.148.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Dec 2025 23:56:46 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/extensions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Dec 2025 23:59:05 +0800</lastBuildDate>
+    <atom:link href="http://localhost:52056/tags/extensions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chrome浏览器插件</title>
-      <link>http://localhost:1313/post/2024-05-03-chrome-extentions/</link>
+      <link>http://localhost:52056/post/2024-05-03-chrome-extentions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-05-03-chrome-extentions/</guid>
+      <guid>http://localhost:52056/post/2024-05-03-chrome-extentions/</guid>
       <description></description>
       
     </item>

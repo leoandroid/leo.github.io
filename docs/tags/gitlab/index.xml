@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gitlab on Leo Blogs</title>
-    <link>https://leo.github.io/tags/gitlab/</link>
+    <link>http://localhost:1313/tags/gitlab/</link>
     <description>Recent Posts in Gitlab on Leo Blogs</description>
     <generator>Hugo 0.148.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Aug 2025 09:30:47 +0800</lastBuildDate>
-    <atom:link href="https://leo.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Dec 2025 23:56:46 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gitlab 部署 runner</title>
-      <link>https://leo.github.io/post/2025-07-27-gitlab-local-runner/</link>
+      <link>http://localhost:1313/post/2025-07-27-gitlab-local-runner/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://leo.github.io/post/2025-07-27-gitlab-local-runner/</guid>
+      <guid>http://localhost:1313/post/2025-07-27-gitlab-local-runner/</guid>
       <description></description>
       
     </item>

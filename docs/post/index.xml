@@ -2,81 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Leo Blogs</title>
-    <link>https://github.com/leoandroid/leo.github.io/post/</link>
+    <link>http://localhost:53565/leoandroid/leo.github.io/post/</link>
     <description>Recent Posts in Posts on Leo Blogs</description>
     <generator>Hugo 0.148.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Dec 2025 00:15:29 +0800</lastBuildDate>
-    <atom:link href="https://github.com/leoandroid/leo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Dec 2025 00:24:54 +0800</lastBuildDate>
+    <atom:link href="http://localhost:53565/leoandroid/leo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gitlab 部署 runner</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2025-07-27-gitlab-local-runner/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2025-07-27-gitlab-local-runner/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2025-07-27-gitlab-local-runner/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2025-07-27-gitlab-local-runner/</guid>
       <description></description>
       
     </item>
     <item>
       <title>RxJava 文档翻译</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2023-12-12-document-rxjava/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>MacOS-14.1 下载/编译/阅读 AOSP</title>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</link>
+      <pubDate>Fri, 08 Dec 2023 08:49:11 +0800</pubDate>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2023-12-08-build-aosp/</guid>
+      <description></description>
+      
+    </item>
+    <item>
+      <title>上传 Android Library 到 Maven Center</title>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</link>
+      <pubDate>Wed, 06 Dec 2023 08:49:11 +0800</pubDate>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2023-12-07-publish-android-library-to-maven-center/</guid>
       <description></description>
       
     </item>
     <item>
       <title>Chrome浏览器插件</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-chrome-extentions/</guid>
       <description></description>
       
     </item>
     <item>
       <title>git-chglog 自动生产 CHANGES</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2025-07-27-git-chglog/</guid>
       <description></description>
       
     </item>
     <item>
       <title>Mac 常用的命令</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-mac-commands/</guid>
       <description></description>
       
     </item>
     <item>
       <title>Mac 应用</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-mac-tools/</guid>
       <description></description>
       
     </item>
     <item>
       <title>Mac 疑难杂症</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-mac-issues/</guid>
       <description></description>
       
     </item>
     <item>
       <title>Markdown 文档</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-markdwon-document/</guid>
       <description></description>
       
     </item>
     <item>
       <title>TeXt 文档</title>
-      <link>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</link>
+      <link>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-text-document/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/leoandroid/leo.github.io/post/2024-05-03-text-document/</guid>
+      <guid>http://localhost:53565/leoandroid/leo.github.io/post/2024-05-03-text-document/</guid>
       <description></description>
       
     </item>
